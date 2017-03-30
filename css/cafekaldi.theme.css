@@ -1,0 +1,91 @@
+html,body,div,a,h1,h2,h3,p,ul,li,nav,header,span,footer,section
+{
+    font: inherit;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    font-size: 24px;
+
+    --color-base: white;
+    --color-1: rgba(245,134,52,100);
+    --color-2: rgba(237,50,55,100);
+    --color-3: rgba(174,51,54,100);
+
+
+}
+html,body
+{
+    width: 100%;
+}
+
+.parallax{
+    z-index: 100;
+    position: relative;
+    min-height: 500px;
+    background-color: var(--color-2);
+    margin-bottom: -100px;
+}
+.servicios{
+    z-index: 200;
+    position: relative;
+    min-height: 500px;
+    background-color: var(--color-3);
+    text-align: center;
+    padding-top: 3rem;
+}
+
+.box__title
+{
+    padding: 3rem 0;
+    padding-top: 5rem;
+    font-size: 77px;
+}
+
+.box__label
+{
+    font-size: 24px;
+}
+
+.nav
+{
+    --logo-height: 100px;
+    --nav-height: 2rem;
+    width: 100%;
+    padding:0 15vw;
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    height: var(--nav-height);
+    text-align: left;
+}
+.nav div
+{
+    display: inline-block;
+}
+
+.nav__logo
+{
+    height: var(--nav-height);
+}
+.nav__logo img
+{
+    height: var(--logo-height);
+}
+
+
+.nav__menu
+{
+    float: right;
+    height: var(--nav-height);
+}
+.nav__item
+{
+    line-height: var(--nav-height);
+    color: var(--color-1);
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    font-weight: bolder;
+    color: var(--color-base);
+}

@@ -1,0 +1,45 @@
+.parallax
+{
+    --height-parallax: 1000px;
+    --color-1: rgba(245,134,52,100);
+
+    position: relative;
+    height: var(--height-parallax);
+}
+
+.parallax__item
+{
+    background-position: bottom center;
+    background-size: auto 1030px;
+    background-repeat: repeat-x;
+    height: var(--height-parallax);
+    position: fixed;
+    width: 100%;
+}
+.parallax__item--0
+{
+    background-image: url('../images/parallax_0.png');
+    background-color: var(--color-1);
+}
+.parallax__item--1
+{
+    background-image: url('../images/parallax_1.png');
+}
+.parallax__item--2
+{
+    background-image: url('../images/parallax_2.png');
+}
+.parallax__item--3
+{
+    background-image: url('../images/parallax_3.png');
+}
+.parallax__item--4
+{
+    background-image: url('../images/parallax_4.png');
+}
+.parallax__item--5
+{
+    background-image: url('../images/parallax_5.png');
+    background-size: auto 220vh;
+}
+
