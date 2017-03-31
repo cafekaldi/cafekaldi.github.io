@@ -6,6 +6,7 @@ html,body,div,a,h1,h2,h3,p,ul,li,nav,header,span,footer,section
     padding: 0;
     vertical-align: top;
     font-size: 24px;
+    font-family: 'Roboto Slab', serif;
 
     --color-base: white;
     --color-1: rgba(245,134,52,100);

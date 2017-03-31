@@ -43,3 +43,88 @@
     background-size: auto 220vh;
 }
 
+.parallax-2
+{
+    position: relative;
+    min-height: 500px;
+    background-color: white;
+    z-index: 300;
+}
+
+.parallax-2__item
+{
+    background-position: bottom center;
+    background-size: auto 1030px;
+    background-repeat: repeat-x;
+    height: var(--height-parallax);
+    position: fixed;
+    width: 100%;
+}
+
+.parallax-2__item--0
+{
+    background-image: url('../images/parallax_6.png');
+    position: relative;
+    height: 200vh;
+    background-size: auto 200vh;
+}
+
+.logo_formulario {
+    position: absolute;
+    top: 60vh;
+    left: 10%;
+    width: 40%;
+    height: 300px;
+}
+
+.container {
+    padding: 0 8%;
+    color: white;
+}
+
+.logo_formulario img{
+    width: 100%;
+}
+
+.formulario {
+    width: 30%;
+    float: right;
+    position: absolute;
+    top: 60vh;
+    right: 10%;
+    border-radius: 5px;
+    border: 5px solid #33ae6b;
+    padding: 5px;
+    padding-bottom: 15px;
+}
+
+.formulario__mensaje {
+    text-align: center;
+    height: 200px;
+    line-height: 200px;
+    font-size: 1.2rem;
+    background: #33ae6b;
+    color: white;
+    font-weight: bolder;
+}
+
+input[type="text"] {
+    width: 80%;
+    margin: .5rem auto;
+    height: 2rem;
+    border-radius: 5px;
+    border: 5px solid #33ae6b;
+    display: block;
+    padding: 0rem .5rem;
+}
+
+input[type="submit"] {
+    float: right;
+    margin-right: 1rem;
+    height: 2rem;
+    width: 50%;
+    border-radius: 5px;
+    border: 0px;
+    background: #33ae6b;
+    color: white;
+}
