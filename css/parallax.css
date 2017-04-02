@@ -82,8 +82,9 @@
     color: white;
 }
 
-.logo_formulario img{
-    width: 100%;
+.logo_formulario img {
+    width: 80%;
+    margin: 0 auto;
 }
 
 .formulario {
