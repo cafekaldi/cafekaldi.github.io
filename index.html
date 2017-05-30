@@ -1,73 +1,180 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Cafe Kaldi</title>
-    <link rel="stylesheet" type="text/css" href="css/cafekaldi.theme.css">
-    <link rel="stylesheet" type="text/css" href="css/parallax.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
+	<title>Cafe Kaldi</title>
+	
+	<meta charset="utf-8">
+	<script
+	  src="https://code.jquery.com/jquery-3.2.1.min.js"
+	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	  crossorigin="anonymous">
+	</script>
+	<link rel="stylesheet" type="text/css" href="components/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="components/template/template.css">
 </head>
-<body>
-<div class="home" id="home">
-    <nav class="nav">
-        <div class="nav__logo">
-            <img src="images/logo_header.png">
-        </div>
-    </nav>
-    <div class="parallax" id="parallax">
-        <div class="parallax__item parallax__item--0" data-speed="5"></div>
-        <div class="parallax__item parallax__item--1" data-speed="12"></div>
-        <div class="parallax__item parallax__item--2" data-speed="30"></div>
-        <div class="parallax__item parallax__item--3" data-speed="12"></div>
-        <div class="parallax__item parallax__item--4" data-speed="60"></div>
-        <div class="parallax__item parallax__item--5" data-speed="100"></div>
-    </div>
-   <div class="servicios">
-   <!--
-       <nav class="nav">
-            <div class="nav__menu">
-                <a class="nav__item">Inicio</a>
-                <a class="nav__item">Menu</a>
-                <a class="nav__item">Encuentranos</a>
-            </div>
-        </nav>
-        -->
-       <div class="container">
-           <h1 class="box__title">Es hora de una experiencia de sabor en 7 colores</h1>
-           <p class="box__label">Un café para <strong> Cúcuta </strong> y <strong>el mundo</strong>.
-           </p>
-       </div>
-   </div>
-   <div class="parallax-2">
-       <div class="parallax-2__item parallax-2__item--0"></div>
-       <div class="logo_formulario">
-           <img src="images/cafekaldi.gif">
-       </div>
-       <div class="formulario">
-            <div class="formulario__mensaje">
-                <div class="container">
-                    <p>Dejanos tus datos y disfruta la experiencia</p>
-                    </div>
-            </div>
-           <form>
-               <div class="entrada">
-                   <input type="text" name="nombre" placeholder="cual es tu nombre?">
-               </div>
-               <div class="entrada">
-                   <input type="text" name="correo" placeholder="tu correo ?">
-               </div>
-               <div class="entrada">
-                   <input type="text" name="cedula" placeholder="tu numero de documento ?">
-               </div>
-               <div class="entrada">
-                   <input type="submit" name="registrate" value="Enviar">
-               </div>
-           </form>
-       </div>
-   </div>
+<body class="bg-white">
+<div class="main container bg-white">
+	<header>
+		<div class="logo col-md-2 col-sm-2">
+			<img class="logo__imagen" src="components/template/logo.png">
+			<img class="logo__imagen-init" src="components/template/logo_black.png">
+		</div>
+		<div class="menu col-md-10 col-sm-10">
+			<nav class="menu_section menu_section-init row">
+				<div class="menu_item text-center col-md-2">
+					<a class="menu_link " href="#">HISTORIA </a>
+				</div>
+				<div class="menu_item text-center col-md-2">
+					<a class="menu_link " href="#">SERVICIOS </a>
+				</div>
+				<div class="menu_item text-center col-md-2">
+					<a class="menu_link " href="#">PRODUCTOS </a>
+				</div>
+				<div class="menu_item text-center col-md-2">
+					<a class="menu_link " href="#">EVENTOS </a>
+				</div>
+				<div class="menu_item text-center col-md-2">
+					<a class="menu_link " href="#">COCINA-KALDI</a>
+				</div>
+			</nav>
+			<nav class="menu_promocion row">
+				<div class="promocion_item promocion_item--especial text-center col-md-2">
+					<a class="menu_link" href="#">Especial</a>
+				</div>
+				<div class="promocion_item promocion_item--lunes text-center col-md-2">
+					<a class="menu_link" href="#">Lunes</a>
+				</div> 
+				<div class="promocion_item promocion_item--martes text-center col-md-2">
+					<a class="menu_link" href="#">Martes</a>
+				</div> 
+				<div class="promocion_item promocion_item--miercoles text-center col-md-2">
+					<a class="menu_link" href="#">Miércoles</a>
+				</div> 
+				<div class="promocion_item promocion_item--jueves text-center col-md-2">
+					<a class="menu_link" href="#">Jueves</a>
+				</div> 
+				<div class="promocion_item promocion_item--viernes text-center col-md-2">
+					<a class="menu_link" href="#">Viernes</a>
+				</div> 
+				<div class="promocion_item promocion_item--sabado text-center col-md-2">
+					<a class="menu_link" href="#">Sábado</a>
+				</div> 
+			</nav>
+		</div>
+		<object class="object_menu_animation" data="components/template/egipto.svg" type="image/svg+xml">
+		</object>
+		
+	</header>
+
+	<!-- PLAY LIST -->
+	<div class="playlist playlist-init">
+		<div id='player'>
+			<h3>PLAY - LIST</h3>
+			<audio controls='' id='audio' preload='auto' tabindex='0' type='audio/mpeg'
+			style="opacity: 0">
+			<source src='public/music_1.mp4' type='audio/mp4'/>
+			Hola, tu navegador no está actualizado y no puede mostrar este contenido.
+			</audio>
+		</div>
+		<ul id='playlist'>
+			<li class='active'><a href="#" music='public/music_1.mp4'>Nombre de la primera canción</a></li>
+			<li><a href="#" music='public/music_2.mp4'>Nombre de la segunda canción</a></li>
+			<li><a href="#" music='public/music_1.mp4'>Nombre de la tercera canción</a></li>
+		</ul>
+		<script>
+		//<![CDATA[
+		var audio;var playlist;var tracks;var current;initaudio();function initaudio(){current=0;audio=$('audio');playlist=$('#playlist');tracks=playlist.find('li a');len=tracks.length-1;audio[0].volume=1;playlist.find('li a').click(function(e){e.preventDefault();link=$(this);current=link.parent().index();runaudio(link,audio[0])});audio[0].addEventListener('ended',function(e){current++;if(current>len){current=0;link=playlist.find('a')[0]}else{link=playlist.find('a')[current]}runaudio($(link),audio[0])})}function runaudio(link,player){player.src=link.attr('music');par=link.parent();par.addClass('active').siblings().removeClass('active');audio[0].load();audio[0].play()}
+		//]]>
+		</script>
+	</div>
+	
+
+
+	<!-- GALERIA -->
+
+	<div class="galeria galeria-init">
+	<div id="myCarousel" class="carousel slide carousel-init" data-ride="carousel">
+			<!-- Indicators -->
+		    <ol class="carousel-indicators">
+		      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		      <li data-target="#myCarousel" data-slide-to="1"></li>
+		      <li data-target="#myCarousel" data-slide-to="2"></li>
+		    </ol>
+			<div class="carousel-inner">
+			    <div class="item active">
+				     <object class="option__shop__back media__image" data="components/template/francia.svg" type="image/svg+xml">
+		  			</object>
+					<div class="carousel-caption">
+						<h3>VINO TINTO - (CONCEPTO DE COLOR)</h3>
+					</div>
+			    </div>
+			    <div class="item">
+			      	<object class="option__shop__back media__image" data="components/template/francia.svg" type="image/svg+xml">
+	  				</object>
+					<div class="carousel-caption">
+						<h3>VINO-TINTO</h3>
+					</div>
+			    </div>
+			    <div class="item">
+			      	<object class="option__shop__back media__image" data="components/template/francia.svg" type="image/svg+xml">
+	  				</object>
+					<div class="carousel-caption">
+						<h3>VINO-TINTO (GALERIA PRODUCTOS)</h3>
+					</div>
+			    </div>
+			 </div>
+			  <!-- Left and right controls -->
+		    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+		      <span class="glyphicon glyphicon-chevron-left"></span>
+		      <span class="sr-only">Previous</span>
+		    </a>
+		    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+		      <span class="glyphicon glyphicon-chevron-right"></span>
+		      <span class="sr-only">Next</span>
+		    </a>
+		</div>	
+	</div>
+
+	<!-- FOOTER -->
+	<footer class="row">
+		<div class="col-md-3 footer">
+			<div class="col-md-12">
+				<h2 class="footer__title footer__title-init">Encuentranos<i></i></h2>
+			</div>
+			<div class="col-md-12 footer__content">
+				<span>Centro Comercial</span>
+				<span>Holiday inn</span>
+				<span>local 12 - Cúcuta- Colombia</span>
+			</div>
+		</div>
+		<div class="col-md-3 footer">
+			<div class="col-md-12">
+				<h2 class="footer__title footer__title-init">Llamanos<i></i></h2>
+			</div>
+			<div class="col-md-12 footer__content">
+				<span>5713261</span>
+				<span>De Lunes a Sábado</span>
+				<span>7.00 am a 7.00 pm</span>
+			</div>		
+		</div>
+		<div class="col-md-3 footer">
+			<div class="col-md-12">
+				<h2 class="footer__title footer__title-init">Siguenos</h2>
+			</div>
+			<div class="col-md-12 footer__content">
+				<span>@cafekaldi <i></i></span>
+				<span>cafekaldi <i></i></span>
+				<span>RigcafeKaldi@gmail.com <i></i></span>
+			</div>
+		</div>
+		<div class="col-md-3 footer">
+			<div class="col-md-12 footer__title"></div>
+			<div class="col-md-12 footer__content">
+				
+			</div>
+		</div>
+	</footer>
 </div>
-<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="node_modules/jquery-mousewheel/jquery.mousewheel.js"></script>
-<script type="text/javascript" src="node_modules/simplr-smoothscroll/lib/jquery.simplr.smoothscroll.min.js"></script>
-<script type="text/javascript" src="js/parallax.js"></script>
+<script type="text/javascript" src="components/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
