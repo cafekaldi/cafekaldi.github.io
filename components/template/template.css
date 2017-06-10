@@ -276,12 +276,13 @@ header
 
 
 .object_menu_animation {
-    width: 12%;
+    width: 11.5%;
     position: absolute;
     bottom: 0;
     right: 0;
     animation-name: object_left;
     animation-duration: 5s;
+    animation-delay: 1.3;
     animation-fill-mode: forwards;
 }
 .logo__imagen-init
@@ -304,6 +305,46 @@ header
     animation-fill-mode: forwards;
 }
 
+.barra-load {
+    position: absolute;
+    width: 100%;
+    background: white;
+    height: 20px;
+    bottom: 0;
+    z-index: 1;
+    animation-name: object_left_row;
+    animation-delay: 1.3;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+.menu_item:hover {
+    cursor: pointer;
+}
+
+a.menu_link {
+    display: inline-block;
+}
+
+@keyframes object_left_row
+{
+    0%{
+        right: 10%;
+    }
+    85%{
+       right: 100%; 
+       opacity: 1;
+    }
+    90%{
+       right: 110%; 
+       opacity: 0; 
+    }
+    100%
+    {
+        right: 100%; 
+        opacity: 0;
+    }
+}
 
 /*animaciones*/
 @keyframes object_left
@@ -311,13 +352,13 @@ header
     0%{
         right: 0;
     }
-    90%{
-       right: 73%; 
+    95%{
+       right: 83%; 
        opacity: 1;
     }
     100%
     {
-        right: 75%; 
+        right: 85%; 
         opacity: 0;
     }
 }
@@ -353,6 +394,17 @@ header
     }
 }
 
+@keyframes desaparecer
+{   
+    0%{
+        opacity: 1;
+    }
+    100%
+    {
+        opacity: 0;
+    }
+}
+
 /**/
 .playlist {
     position: absolute;
@@ -381,6 +433,9 @@ iframe#playlist {
 
 ul#playlist {
     padding: 0;
+    background: transparent;
+    box-shadow: initial !important;
+    border: 0;
 }
 
 #playlist li {
@@ -390,10 +445,10 @@ ul#playlist {
     background: #58595b;
     padding-left: 5px;
     line-height: 30px;
-    width: 106%;
+    width: 100%;
 }
 #playlist li:nth-child(even) {
-    background: #6d6e70;
+    /*background: #6d6e70;*/
 }
 
 #playlist li a {
@@ -401,10 +456,108 @@ ul#playlist {
     text-decoration: none;
 }
 
-#playlist li.active a {
-    /* color: black; */
+#playlist li a:hover {
+    background: #58595b;
 }
 
-#playlist li.active {
+#playlist li.active a {
+    /* color: black; */
+    background: transparent;
+}
+
+#playlist li.active,#playlist li:hover {
     border-left: 15px solid rgba(34, 31, 32, 0.2);
+    opacity: 1;
+}
+
+#playlist li {
+    opacity: 0.5;
+}
+
+
+#loading__text {
+    position: absolute;
+    top: 60vh;
+    font-size: 120px;
+    width: 100%;
+    z-index: 100;
+    text-align: center;
+    color: black;
+    margin: 0 auto;
+}
+
+#loading__text.load {
+    animation-name: desaparecer;
+    animation-delay: .3s;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
+}
+
+#contenido summary {
+    width: 94%;
+    margin: 0 auto;
+    font-size: 1.8rem;
+    position: relative;
+    outline: none;
+    color: grey;
+}
+
+#contenido a.btn {
+    right: 0;
+    position: absolute;
+    font-style: italic;
+    background: #3f3f41;
+    color: white;
+}
+
+/**/
+.post p {
+    color: #a5a5a5;
+    font-size: 18px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.post {
+    margin-bottom: 5rem;
+}
+
+.post h2 {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    font-size: 5rem;
+    color: grey;
+}
+
+.post.container {
+    position: relative;
+    top: -3rem;
+    background: #221f20;
+}
+
+.post ul {
+    margin-left: 5%;
+    color: grey;
+    font-size: 18px;
+}
+
+.post ul li:hover {
+    color: white;
+}
+
+ul.galery {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+ul.galery li {
+    box-sizing: border-box;
+    display: inline-block;
+    background: #3f3f41;
+    padding: 17px;
+    width: 31%;
+    float: left;
+    margin: 6px;
 }

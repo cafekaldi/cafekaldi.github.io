@@ -22,22 +22,23 @@
 		<div class="menu col-md-10 col-sm-10">
 			<nav class="menu_section menu_section-init row">
 				<div class="menu_item text-center col-md-2">
-					<a class="menu_link " href="#">HISTORIA </a>
+					<a class="menu_link " href="/historia.html">HISTORIA </a>
 				</div>
 				<div class="menu_item text-center col-md-2">
-					<a class="menu_link " href="#">SERVICIOS </a>
+					<a class="menu_link " href="/servicios.html">SERVICIOS </a>
 				</div>
 				<div class="menu_item text-center col-md-2">
-					<a class="menu_link " href="#">PRODUCTOS </a>
+					<a class="menu_link " href="/productos.html">PRODUCTOS </a>
 				</div>
 				<div class="menu_item text-center col-md-2">
-					<a class="menu_link " href="#">EVENTOS </a>
+					<a class="menu_link " href="/eventos.html">EVENTOS </a>
 				</div>
 				<div class="menu_item text-center col-md-2">
-					<a class="menu_link " href="#">COCINA-KALDI</a>
+					<a class="menu_link " href="/cocina-kaldi.html">COCINA-KALDI</a>
 				</div>
 			</nav>
 			<nav class="menu_promocion row">
+				<div class="barra-load"></div>
 				<div class="promocion_item promocion_item--especial text-center col-md-2">
 					<a class="menu_link" href="#">Especial</a>
 				</div>
@@ -61,26 +62,29 @@
 				</div> 
 			</nav>
 		</div>
+		<div class="loading" id="loading">
+			<p class="loading__text" id="loading__text">0</p>
+		</div>
 		<object class="object_menu_animation" data="components/template/egipto.svg" type="image/svg+xml">
 		</object>
 		
 	</header>
 
 	<!-- PLAY LIST -->
-	<div class="playlist playlist-init">
+	<div class="playlist playlist-init dropdown">
 		<div id='player'>
-			<h3>PLAY - LIST</h3>
-			<audio controls='' id='audio' preload='auto' tabindex='0' type='audio/mpeg'
-			style="opacity: 0">
-			<source src='public/music_1.mp4' type='audio/mp4'/>
-			Hola, tu navegador no está actualizado y no puede mostrar este contenido.
-			</audio>
+			<h3 class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1">PLAY - LIST</h3>
+				<ul id='playlist' class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" >
+				<audio controls='' id='audio' preload='auto' tabindex='0' type='audio/mpeg'
+				style="opacity: 0.8">
+				<source src='public/music_1.mp4' type='audio/mp4'/>
+				Hola, tu navegador no está actualizado y no puede mostrar este contenido.
+				</audio>
+				<li class='active'><a href="#" music='public/music_1.mp4'>Nombre de la primera canción</a></li>
+				<li><a href="#" music='public/music_2.mp4'>Nombre de la segunda canción</a></li>
+				<li><a href="#" music='public/music_1.mp4'>Nombre de la tercera canción</a></li>
+			</ul>
 		</div>
-		<ul id='playlist'>
-			<li class='active'><a href="#" music='public/music_1.mp4'>Nombre de la primera canción</a></li>
-			<li><a href="#" music='public/music_2.mp4'>Nombre de la segunda canción</a></li>
-			<li><a href="#" music='public/music_1.mp4'>Nombre de la tercera canción</a></li>
-		</ul>
 		<script>
 		//<![CDATA[
 		var audio;var playlist;var tracks;var current;initaudio();function initaudio(){current=0;audio=$('audio');playlist=$('#playlist');tracks=playlist.find('li a');len=tracks.length-1;audio[0].volume=1;playlist.find('li a').click(function(e){e.preventDefault();link=$(this);current=link.parent().index();runaudio(link,audio[0])});audio[0].addEventListener('ended',function(e){current++;if(current>len){current=0;link=playlist.find('a')[0]}else{link=playlist.find('a')[current]}runaudio($(link),audio[0])})}function runaudio(link,player){player.src=link.attr('music');par=link.parent();par.addClass('active').siblings().removeClass('active');audio[0].load();audio[0].play()}
@@ -134,6 +138,14 @@
 		    </a>
 		</div>	
 	</div>
+	<div class="contenido" id="contenido">
+		<details id="contenido_details">
+			<summary>Café 100% natural seleccionado a mano cultivado a 1750 metros SNM <a class="btn" id="btn_leermas" value="Leer mas">Leer Mas</a></summary>
+			<div class="post">
+				
+			</div>
+		</details>
+	</div>
 
 	<!-- FOOTER -->
 	<footer class="row">
@@ -176,5 +188,6 @@
 	</footer>
 </div>
 <script type="text/javascript" src="components/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="components/template/loading.js"></script>
 </body>
 </html>
