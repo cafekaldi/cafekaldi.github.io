@@ -11,9 +11,8 @@ body {
 header
 {
     position: relative;
-    height: 138px;
     margin-bottom: 34px;
-    height: 138px;
+    height: 114px;
 }
 
     
@@ -76,7 +75,7 @@ header
     line-height: 50px;
     border-bottom: 10px solid;
     width: 13.8%;
-    padding-top: 4%;
+    /*padding-top: 4%;*/
 }
 .promocion_item--especial {
     border-color: #ac1c21;
@@ -109,7 +108,7 @@ header
     flex-wrap: wrap;
     width: 100.333%;
     position: relative;
-    top: -2.1vw;
+    top: -1.3333vh;
     left: 1vw;
 }
 
@@ -136,6 +135,7 @@ header
     overflow: hidden;
     height: 700px;
     margin-bottom: 10px;
+    max-height: 650px;
 }
 
 
@@ -177,6 +177,8 @@ header
 .carousel-inner {
     height: 95%;
     background: #3f3f41;
+    max-height: 600px !important;
+    position: relative;
 }
 
 .carousel-indicators {
@@ -560,4 +562,14 @@ ul.galery li {
     width: 31%;
     float: left;
     margin: 6px;
+}
+
+
+@media only screen and (min-width: 1200px) {
+    .menu_promocion {
+        top: 2vh;
+    }
+    .object_menu_animation {
+        bottom: calc( -3vh - 10px );
+    }
 }
