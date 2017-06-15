@@ -816,12 +816,17 @@ a.menu_link {
 
     }
 
-    100%
+    99%
 
     {
 
         opacity: 0;
 
+    }
+    100%
+    {
+        opacity: 0;
+        display: none;
     }
 
 }
