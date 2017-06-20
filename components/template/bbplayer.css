@@ -1,0 +1,60 @@
+ul#playlist {
+    width: 106%;
+}
+
+span.bb-rewind {
+    height: 1.5rem;
+    width: 1.5rem;
+    background-size: 90%;
+}
+
+.playerWindow {
+    width: 64%;
+    overflow: hidden;
+    float: right;
+    position: absolute;
+    right: 0;
+    top: 4px;
+}
+
+.bbplayer {
+    padding-bottom: 3px;
+}
+
+.bb-track-display span {
+    display: inline;
+    width: 33%;
+    font-size: 16px;
+    box-sizing: border-box;
+    float: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+span.bb-play.bb-paused {
+    height: 2rem;
+    width: 2rem;
+    background-size: 70%;
+    border: none;
+    background-position: 80%;
+}
+
+span.bb-forward {
+    height: 1.5rem;
+    width: 1.5rem;
+    background-size: 90%;
+}
+
+span.bb-play.bb-playing {
+    background-position: center center !important;
+    height: 25px !important;
+    width: 25px !important;
+    border: 3px solid #cfcfcf !important;
+    background-size: 60%;
+}
+
+ul#playlist {
+    background: rgba(0, 0, 0, 0.35) !important;
+    border-radius: 0 !important;
+    padding-bottom: : 1px !important;
+}
