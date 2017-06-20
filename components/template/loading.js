@@ -5,6 +5,16 @@ $( document ).ready(function() {
     	$('#contenido_details').click();
     })
 
+    setTimeout(function(){
+    	if ($('#btn_play').hasClass('bb-paused')) {
+    		$('#btn_play').click();
+    		$("#player").addClass('open');
+    		$("#dropdownMenu1").attr('aria-expanded','true');	
+    	}
+    },10000);
+
+   
+    
 });
 
 function initloading() {

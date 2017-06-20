@@ -827,6 +827,7 @@ a.menu_link {
     {
         opacity: 0;
         display: none;
+        z-index: -100;
     }
 
 }
