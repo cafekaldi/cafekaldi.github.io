@@ -1216,3 +1216,10 @@ object.option__shop__back.media__image {
         top: 163px;
     }
 }
+
+
+@media screen and (min-width: 768px){
+    .carousel-indicators {
+        bottom: -16px !important;
+    }
+}
