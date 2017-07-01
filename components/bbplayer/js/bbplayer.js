@@ -1,9 +1,9 @@
 /*global $, document, alert*/
-
+var bbplayers = [];
 (function () {
 
   // Track multiple players on the page
-  var bbplayers = [];
+  // var bbplayers = [];
 
 
   // Stop all other bbplayers on page when starting another
@@ -130,8 +130,8 @@
 
   // Set current source for audio to given track number
   BBPlayer.prototype.loadTrack = function (trackNumber) {
-    var source = this.bbaudio.getElementsByTagName("source").item(trackNumber).getAttribute('src');
-    this.bbaudio.src = source;
+    var source = bbaudio.getElementsByTagName("source").item(trackNumber).getAttribute('src');
+    bbaudio.src = source;
     // don't autoplay if bbplayer state is paused
     if (this.state === 'paused') {
       this.bbaudio.pause();

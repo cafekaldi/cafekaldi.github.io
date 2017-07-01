@@ -5,9 +5,7 @@
 	
 	<meta charset="utf-8">
 	<script
-	  src="https://code.jquery.com/jquery-3.2.1.min.js"
-	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-	  crossorigin="anonymous">
+	  src="components/jquery/dist/jquery.min.js">
 	</script>
 	<link rel="stylesheet" type="text/css" href="components/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="components/template/template.css">
@@ -72,104 +70,110 @@
 		
 	</header>
 	
-	<!-- PLAY LIST -->
-	<div id="playlist_dropdown" class="playlist playlist-init dropdown">
-		<div id='player'>
-			<h3 class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1">Radio CafeKaldi</h3>
-			<ul id='playlist' class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" >
-				<!--bbplayer -->
-					<div class="bbplayer">
-				      <span class="bb-rewind"></span>
-				      <span id="btn_play" class="bb-play"></span>
-				      <span class="bb-forward"></span>
-				      <div class="playerWindow">
-				        <div class="bb-track-display">
-				          <span class="bb-trackTime">--:--</span>
-				          <span class="bb-trackTitle">&nbsp;</span>
-				          <span class="bb-trackLength">--:--</span>
-				        </div>
-				        <div class="bb-album-display">
-				          <span class="bb-artist">Brian Browne Trio</span> -
-				          <span class="bb-album">Blue Browne</span>
-				        </div>
-				      </div>
-				      <!--
-				      <span class="bb-albumCover">&nbsp;</span>
-				      -->
-				      <audio loop>
-				        <source
-				           src="public/music_2.mp4" type="audio/mp4"
-				           data-album="Blue Browne"
-				           data-artist="Brian Browne Trio"
-				           data-image="media/Blue Browne small.jpg"/>
-				        <source
-				           src="public/music_1.mp4" type="audio/mp4"
-				           data-album="Blue Browne"
-				           data-artist="Brian Browne Trio"
-				           data-image="media/Beatles small.jpg"/>
-				        HTML5 Audio Not Available
-				      </audio>
-				      <!--
-				      <div>Optional debug panel:</div>
-				      <div class="bb-debug"></div>
-				      -->
-			    	</div>
-			    <!-- end bbplayer -->
-			</ul>
-		</div>
-	</div>
-	
-
-
-	<!-- GALERIA -->
-
-	<div class="galeria galeria-init">
-	<div id="myCarousel" class="carousel slide carousel-init" data-ride="carousel">
-			<!-- Indicators -->
-		    <ol class="carousel-indicators">
-		      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-		      <li data-target="#myCarousel" data-slide-to="1"></li>
-		      <li data-target="#myCarousel" data-slide-to="2"></li>
-		    </ol>
-			<div class="carousel-inner">
-			    <div class="item active">
-		  			<div class="option__shop__back media__image" style="background-image: url('https://scontent-mia1-1.xx.fbcdn.net/v/t1.0-9/18839298_238348273323575_1601569780801000259_n.jpg?oh=a39abb12023c03cfce620dae21e5bccf&oe=59E791BF')">
-		  			</div>
-					<div class="carousel-caption">
-						<h3>VINO TINTO - (CONCEPTO DE COLOR)</h3>
-					</div>
-			    </div>
-			     <div class="item ">
-		  			<div class="option__shop__back media__image" style="background-image: url(images/promocion_1.png)">
-		  			</div>
-					<div class="carousel-caption">
-						<h3>Cafe Kaldi el centro de negocios de cúcuta</h3>
-					</div>
-			    </div>
-			 </div>
-			  <!-- Left and right controls -->
-		    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-		      <span class="glyphicon glyphicon-chevron-left"></span>
-		      <span class="sr-only">Previous</span>
-		    </a>
-		    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-		      <span class="glyphicon glyphicon-chevron-right"></span>
-		      <span class="sr-only">Next</span>
-		    </a>
-		</div>	
-	</div>
-	<div class="contenido" id="contenido">
-		<details id="contenido_details">
-			<summary>Café 100% natural seleccionado a mano cultivado a 1750 metros SNM, no pierda la oportuni... <a class="btn" id="btn_leermas" value="Leer mas">Leer Mas</a></summary>
-			<div class="post">
-				
+	<section class="playlist">
+		<!-- PLAY LIST -->
+		<div id="playlist_dropdown" class="playlist playlist-init dropdown">
+			<div id='player'>
+				<h3 class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1">Radio CafeKaldi</h3>
+				<ul id='playlist' class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" >
+					<!--bbplayer -->
+						<div class="bbplayer" id="bbplayer">
+					      <span class="bb-rewind"></span>
+					      <span id="btn_play" class="bb-play"></span>
+					      <span class="bb-forward"></span>
+					      <div class="playerWindow">
+					        <div class="bb-track-display">
+					          <span class="bb-trackTime">--:--</span>
+					          <span class="bb-trackTitle">&nbsp;</span>
+					          <span class="bb-trackLength">--:--</span>
+					        </div>
+					        <div class="bb-album-display">
+					          <span class="bb-artist">Brian Browne Trio</span> -
+					          <span class="bb-album">Blue Browne</span>
+					        </div>
+					      </div>
+					      <!--
+					      <span class="bb-albumCover">&nbsp;</span>
+					      -->
+					      <audio loop id="bbaudio">
+					        <source
+					           src="public/music_1.mp4" type="audio/mp4"
+					           data-album="Blue Browne"
+					           data-artist="Brian Browne Trio"
+					           data-image="media/Blue Browne small.jpg"/>
+					        <source
+					           src="public/music_2.mp4" type="audio/mp4"
+					           data-album="Blue Browne"
+					           data-artist="Brian Browne Trio"
+					           data-image="media/Beatles small.jpg"/>
+					        HTML5 Audior Not Available
+					      </audio>
+					     
+					      <!--
+					      <div>Optional debug panel:</div>
+					      <div class="bb-debug"></div>
+					      -->
+				    	</div>
+				    <!-- end bbplayer -->
+				     <div class="bb-listplayer">
+					      	<li class="bb-music" onclick="loadTrack(0)">music_1</li>
+					      	<li class="bb-music" onclick="loadTrack(1)">music_2</li>
+					 </div>
+				</ul>
 			</div>
-		</details>
-	</div>
+		</div>
+	</section>
+	
+	
+	<section class="content">
+		<!-- GALERIA -->
+		<div class="galeria galeria-init">
+			<div id="myCarousel" class="carousel slide carousel-init" data-ride="carousel">
+				<!-- Indicators -->
+				<!-- LUNES -->
+				<div class="carouser__week" id="lunes">
+					<div class="carousel-inner">
+					    <div class="item active">
+				  			<div class="option__shop__back media__image" style="background-image: url(images/lunes/lunes.jpg)">
+				  			</div>
+					    </div>
+					     <div class="item ">
+				  			<div class="option__shop__back media__image" style="background-image: url(images/lunes/2.jpg)">
+				  			</div>
+					    </div>
+					</div>
+					<ol class="carousel-indicators">
+				      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				      <li data-target="#myCarousel" data-slide-to="1"></li>
+				    </ol>
+				</div> <!-- END LUNES -->
+			
+				  <!-- Left and right controls -->
+			    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+			      <span class="glyphicon glyphicon-chevron-left"></span>
+			      <span class="sr-only">Previous</span>
+			    </a>
+			    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+			      <span class="glyphicon glyphicon-chevron-right"></span>
+			      <span class="sr-only">Next</span>
+			    </a>
+			</div>	
+		</div>
+		<!-- CONTENIDO -->
+		<div class="contenido" id="contenido">
+			<details id="contenido_details">
+				<summary>Café 100% natural seleccionado a mano cultivado a 1750 metros SNM, no pierda la oportuni... <a class="btn" id="btn_leermas" value="Leer mas">Leer Mas</a></summary>
+				<div class="post">
+					
+				</div>
+			</details>
+		</div>
+	</section>
+
 
 	<!-- FOOTER -->
 	<footer class="row">
-		<div class="col-md-3 footer">
+		<div class="col-sm-4 col-md-3 footer">
 			<div class="col-md-12">
 				<h2 class="footer__title footer__title-init">Encuentranos<i></i></h2>
 			</div>
@@ -179,7 +183,7 @@
 				<span>local 12 - Cúcuta- Colombia</span>
 			</div>
 		</div>
-		<div class="col-md-3 footer">
+		<div class="col-sm-3 col-md-3 footer">
 			<div class="col-md-12">
 				<h2 class="footer__title footer__title-init">Llamanos<i></i></h2>
 			</div>
@@ -189,7 +193,7 @@
 				<span>7.00 am a 7.00 pm</span>
 			</div>		
 		</div>
-		<div class="col-md-3 footer">
+		<div class="col-sm-4 col-md-3 footer">
 			<div class="col-md-12">
 				<h2 class="footer__title footer__title-init">Siguenos</h2>
 			</div>
@@ -199,7 +203,7 @@
 				<span>RigcafeKaldi@gmail.com <i></i></span>
 			</div>
 		</div>
-		<div class="col-md-3 footer">
+		<div class="sm-offset-4 col-sm-4 col-md-3 footer">
 			<div class="col-md-12 footer__title"></div>
 			<div class="col-md-12 footer__content">
 				
