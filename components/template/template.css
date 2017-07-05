@@ -13,6 +13,14 @@ body {
 }
 
 
+a.movile_promociones {
+    display: none;
+}
+
+a.movile_menu {
+    display: none;
+}
+
 
 
 
@@ -294,9 +302,25 @@ header
 
     top: 2.5rem;
 
+    display: none;
+
 }
 
+.carousel--open,
+.carousel.open {
 
+    display: block;
+    background-image: url(../../images/loading.gif);
+    background-position: center;
+    background-size: 150px;
+    background-repeat: no-repeat;
+
+}
+
+.carousel--open-fast,
+.carousel.open-fast {
+    animation-delay: .5s;
+}
 
 
 
@@ -381,6 +405,8 @@ header
     width: calc( 600px * 1.8);
 
     position: relative;
+
+    margin: 0 auto;
 
 }
 
@@ -842,6 +868,8 @@ a.menu_link {
         opacity: 0;
         display: none;
         z-index: -100;
+        position: absolute;
+        left: -100vw;
     }
 
 }
@@ -1077,6 +1105,10 @@ ul#playlist {
     width: 90%;
 
     margin: 0 auto;
+
+    text-align: justify;
+    
+    padding-bottom: 1rem;
 
 }
 
@@ -1372,8 +1404,233 @@ object.option__shop__back.media__image {
     }
 }
 
-@media only screen and (min-width: 768px){
+@media only screen and (max-width: 768px){
     .carousel-indicators {
         bottom: -16px !important;
+    }
+
+    .main.container.bg-white {
+        padding: 0;
+    }
+
+
+    header {
+    position: relative;
+    position: fixed;
+    z-index: 100;
+    /*background: rgb(33, 31, 32);*/
+    width: 100%;
+    /* overflow: hidden; */
+    }
+
+    .logo {
+        width: 25% !IMPORTANT;
+        margin: 0 auto;
+        position: absolute;
+        left: 39%;
+        top: 1rem;
+    }
+
+    img.logo__imagen {
+        height: 65px;
+        width: auto !important;
+    }
+
+    img.logo__imagen-init {
+        height: 65px;
+        width: auto !important;
+    }
+
+   
+    .menu_item {display: block;width: 100% !important;padding: 0rem;line-height: 10vh;/* font-size: 24px !important; */height: 10vh;}
+
+    .menu {
+        position: fixed;
+        top: 68px;
+    }
+    nav.menu_section {
+        display: none;
+        z-index: 200;
+        width: 100%;
+        padding-left: 0;
+        height: auto;
+        max-height: inherit;
+        margin: 0;
+        margin-top: 20px;
+        animation-delay: 0s;
+    }
+
+    nav.menu_section.open
+    {
+        display: block;
+        animation-delay: 0s;
+    }
+
+    nav.menu_section::before {
+        display: none;
+    }
+
+    .menu {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    a.menu_link {
+        font-size: 18px !important;
+    }
+
+    a.movile_menu {
+        float: left;
+        padding: 4rem;
+        font-size: 18px;
+        color: white;
+        display: block;
+        width: 25%;
+        text-align: center;
+    }
+
+    a.movile_promociones {
+        float: right;
+        padding: 4rem;
+        font-size: 18px;
+        color: white;
+        /*background: #211f20;*/
+        display: block;
+        overflow: hidden;
+        height: 90px;
+    }
+
+    nav.menu_promocion.row {
+        width: 103%;
+    }
+
+    a.menu_link {
+        font-size: 0px !important;
+    }
+
+    .promocion_item {
+        height: 25px;
+    }
+
+    header {
+        height: 90px;
+        margin-bottom: 0 !important;
+        animation-name: bg_black;
+        animation-delay: 4.4s;
+        animation-duration: .5s;
+        animation-fill-mode: forwards;
+    }
+
+    body.bg-white {
+        overflow-x: hidden;
+    }
+
+    div.carousel,.galeria-init  {
+        width: 88vw;
+        height: 50vw;
+        margin: 0 auto;
+        margin-bottom: 5rem;
+    }
+
+    .carousel-inner
+    {
+        width: 88vw !important;
+        height: 50vw !important;
+    }
+
+    ol.carousel-indicators {
+        display: none;
+    }
+
+    footer.row {
+        margin-top: 4rem;
+        padding-right: 1rem;
+    }
+
+    .open a.menu_link {
+        font-size: 18px !important;
+    }
+
+    div#player {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    section.playlist {
+        padding-top: 101px;
+        width: 100%;
+        z-index: 1;
+    }
+
+    div#playlist_dropdown {
+        width: 100%;
+    }
+
+    .footer span {
+        font-size: 16px;
+        text-align: right;
+    }
+
+    .footer.col-xs-12 span,
+    .footer.col-xs-12 h2
+    {
+        text-align: center;
+    }
+
+    p#loading__text {
+        top: 30vh;
+        font-size: 5rem;    
+    }
+
+    nav#menu_promocion.open {
+        display: block;
+        top: 20px!important;
+        max-height: 100vh;
+        min-height: 100vh;
+        overflow: overlay;
+    }
+
+    nav#menu_promocion.open .promocion_item {
+        display: block;
+        width: 100%;
+        height: 13vh;
+        line-height: 13vh;
+        text-align: center;
+        background: #221f20;
+    }
+
+    #player h3 {
+        line-height: 35px;
+        height: 35px;
+    }
+
+    .footer__title {
+        font-size: 16px;
+    }
+
+    a#btn_leermas {
+        position: relative !important;
+        display: block;
+    }
+
+    .post {
+        position: relative;
+        top: -10rem;
+        background: #221f20;
+        margin-bottom: -5rem;
+    }
+
+    nav#menu_section {
+        max-height: 100vh;
+        min-height: 100vh;
+        border-radius: 0;
+        overflow-y: overlay;
+    }
+
+    h1 {
+        font-size: xx-large;
+        text-align: center;
     }
 }

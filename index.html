@@ -7,6 +7,7 @@
 	<script
 	  src="components/jquery/dist/jquery.min.js">
 	</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="components/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="components/template/template.css">
 	<link rel="stylesheet" type="text/css" href="components/bbplayer/css/bbplayer-minimal.css">
@@ -15,12 +16,18 @@
 <body class="bg-white">
 <div class="main container bg-white">
 	<header>
+		<div>
+			<a href="#" onclick="openMenu()" class="movile_menu">MENU</a>
+		</div>
+		<div>
+			<a href="#" onclick="openPromocion()" class="movile_promociones">PROMOS</a>
+		</div>
 		<div class="logo col-md-2 col-sm-2">
 			<img class="logo__imagen" src="components/template/logo.png">
 			<img class="logo__imagen-init" src="components/template/logo_black.png">
 		</div>
 		<div class="menu col-md-10 col-sm-10">
-			<nav class="menu_section menu_section-init row">
+			<nav id="menu_section" class="menu_section menu_section-init row">
 				<div class="menu_item text-center col-md-2">
 					<a class="menu_link " href="/historia.html">HISTORIA </a>
 				</div>
@@ -37,28 +44,28 @@
 					<a class="menu_link " href="/cocina-kaldi.html">COCINA-KALDI</a>
 				</div>
 			</nav>
-			<nav class="menu_promocion row">
+			<nav id="menu_promocion" class="menu_promocion row">
 				<div class="barra-load"></div>
 				<div class="promocion_item promocion_item--especial text-center col-md-2">
-					<a class="menu_link" href="#">Especial</a>
+					<a class="menu_link" href="#" onclick="viewGalery('especial')">Especial</a>
 				</div>
 				<div class="promocion_item promocion_item--lunes text-center col-md-2">
-					<a class="menu_link" href="#">Lunes</a>
+					<a class="menu_link" href="#" onclick="viewGalery('lunes')">Lunes</a>
 				</div> 
 				<div class="promocion_item promocion_item--martes text-center col-md-2">
-					<a class="menu_link" href="#">Martes</a>
+					<a class="menu_link" href="#" onclick="viewGalery('martes')">Martes</a>
 				</div> 
 				<div class="promocion_item promocion_item--miercoles text-center col-md-2">
-					<a class="menu_link" href="#">Miércoles</a>
+					<a class="menu_link" href="#" onclick="viewGalery('miercoles')">Miércoles</a>
 				</div> 
 				<div class="promocion_item promocion_item--jueves text-center col-md-2">
-					<a class="menu_link" href="#">Jueves</a>
+					<a class="menu_link" href="#" onclick="viewGalery('jueves')">Jueves</a>
 				</div> 
 				<div class="promocion_item promocion_item--viernes text-center col-md-2">
-					<a class="menu_link" href="#">Viernes</a>
+					<a class="menu_link" href="#" onclick="viewGalery('viernes')">Viernes</a>
 				</div> 
 				<div class="promocion_item promocion_item--sabado text-center col-md-2">
-					<a class="menu_link" href="#">Sábado</a>
+					<a class="menu_link" href="#" onclick="viewGalery('sabado')">Sábado</a>
 				</div> 
 			</nav>
 		</div>
@@ -128,10 +135,9 @@
 	<section class="content">
 		<!-- GALERIA -->
 		<div class="galeria galeria-init">
-			<div id="myCarousel" class="carousel slide carousel-init" data-ride="carousel">
+			<div id="lunes" class="carousel slide carousel-init" data-ride="carousel">
 				<!-- Indicators -->
-				<!-- LUNES -->
-				<div class="carouser__week" id="lunes">
+				<div class="carousel__week">
 					<div class="carousel-inner">
 					    <div class="item active">
 				  			<div class="option__shop__back media__image" style="background-image: url(images/lunes/lunes.jpg)">
@@ -143,28 +149,221 @@
 					    </div>
 					</div>
 					<ol class="carousel-indicators">
-				      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				      <li data-target="#myCarousel" data-slide-to="1"></li>
+				      <li data-target="#lunes" data-slide-to="0" class="active"></li>
+				      <li data-target="#lunes" data-slide-to="1"></li>
 				    </ol>
-				</div> <!-- END LUNES -->
-			
+				</div>
 				  <!-- Left and right controls -->
-			    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+			    <a class="left carousel-control" href="#lunes" data-slide="prev">
 			      <span class="glyphicon glyphicon-chevron-left"></span>
 			      <span class="sr-only">Previous</span>
 			    </a>
-			    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+			    <a class="right carousel-control" href="#lunes" data-slide="next">
 			      <span class="glyphicon glyphicon-chevron-right"></span>
 			      <span class="sr-only">Next</span>
 			    </a>
 			</div>	
+
+			<!-- MARTES -->
+			<div id="martes" class="carousel slide carousel-init" data-ride="carousel">
+				<!-- Indicators -->
+				<div class="carousel__week">
+					<div class="carousel-inner">
+					    <div class="item active">
+				  			<div class="option__shop__back media__image" style="background-image: url(images/martes/1.jpg)">
+				  			</div>
+					    </div>
+					     <div class="item ">
+				  			<div class="option__shop__back media__image" style="background-image: url(images/martes/2.jpg)">
+				  			</div>
+					    </div>
+					</div>
+					<ol class="carousel-indicators">
+				      <li data-target="#martes" data-slide-to="0" class="active"></li>
+				      <li data-target="#martes" data-slide-to="1"></li>
+				    </ol>
+				</div>
+				  <!-- Left and right controls -->
+			    <a class="left carousel-control" href="#martes" data-slide="prev">
+			      <span class="glyphicon glyphicon-chevron-left"></span>
+			      <span class="sr-only">Previous</span>
+			    </a>
+			    <a class="right carousel-control" href="#martes" data-slide="next">
+			      <span class="glyphicon glyphicon-chevron-right"></span>
+			      <span class="sr-only">Next</span>
+			    </a>
+			</div>
+			<!-- END MARTES -->
+
+			<!-- miercoles -->
+			<div id="miercoles" class="carousel slide carousel-init" data-ride="carousel">
+				<!-- Indicators -->
+				<div class="carousel__week">
+					<div class="carousel-inner">
+					    <div class="item active">
+				  			<div class="option__shop__back media__image" style="background-image: url(images/miercoles/1.jpg)">
+				  			</div>
+					    </div>
+					     <div class="item ">
+				  			<div class="option__shop__back media__image" style="background-image: url(images/miercoles/2.jpg)">
+				  			</div>
+					    </div>
+					</div>
+					<ol class="carousel-indicators">
+				      <li data-target="#miercoles" data-slide-to="0" class="active"></li>
+				      <li data-target="#miercoles" data-slide-to="1"></li>
+				    </ol>
+				</div>
+				  <!-- Left and right controls -->
+			    <a class="left carousel-control" href="#miercoles" data-slide="prev">
+			      <span class="glyphicon glyphicon-chevron-left"></span>
+			      <span class="sr-only">Previous</span>
+			    </a>
+			    <a class="right carousel-control" href="#miercoles" data-slide="next">
+			      <span class="glyphicon glyphicon-chevron-right"></span>
+			      <span class="sr-only">Next</span>
+			    </a>
+			</div>
+			<!-- END miercoles -->
+
+			<!-- jueves -->
+			<div id="jueves" class="carousel slide carousel-init" data-ride="carousel">
+				<!-- Indicators -->
+				<div class="carousel__week">
+					<div class="carousel-inner">
+					    <div class="item active">
+				  			<div class="option__shop__back media__image" style="background-image: url(images/lunes/lunes.jpg)">
+				  			</div>
+					    </div>
+					     <div class="item ">
+				  			<div class="option__shop__back media__image" style="background-image: url(images/lunes/2.jpg)">
+				  			</div>
+					    </div>
+					</div>
+					<ol class="carousel-indicators">
+				      <li data-target="#jueves" data-slide-to="0" class="active"></li>
+				      <li data-target="#jueves" data-slide-to="1"></li>
+				    </ol>
+				</div>
+				  <!-- Left and right controls -->
+			    <a class="left carousel-control" href="#jueves" data-slide="prev">
+			      <span class="glyphicon glyphicon-chevron-left"></span>
+			      <span class="sr-only">Previous</span>
+			    </a>
+			    <a class="right carousel-control" href="#jueves" data-slide="next">
+			      <span class="glyphicon glyphicon-chevron-right"></span>
+			      <span class="sr-only">Next</span>
+			    </a>
+			</div>
+			<!-- END jueves -->
+
+			<!-- viernes -->
+			<div id="viernes" class="carousel slide carousel-init" data-ride="carousel">
+				<!-- Indicators -->
+				<div class="carousel__week">
+					<div class="carousel-inner">
+					    <div class="item active">
+				  			<div class="option__shop__back media__image" style="background-image: url(images/viernes/1.jpg)">
+				  			</div>
+					    </div>
+					     <div class="item ">
+				  			<div class="option__shop__back media__image" style="background-image: url(images/viernes/2.jpg)">
+				  			</div>
+					    </div>
+					</div>
+					<ol class="carousel-indicators">
+				      <li data-target="#viernes" data-slide-to="0" class="active"></li>
+				      <li data-target="#viernes" data-slide-to="1"></li>
+				    </ol>
+				</div>
+				  <!-- Left and right controls -->
+			    <a class="left carousel-control" href="#viernes" data-slide="prev">
+			      <span class="glyphicon glyphicon-chevron-left"></span>
+			      <span class="sr-only">Previous</span>
+			    </a>
+			    <a class="right carousel-control" href="#viernes" data-slide="next">
+			      <span class="glyphicon glyphicon-chevron-right"></span>
+			      <span class="sr-only">Next</span>
+			    </a>
+			</div>
+			<!-- END viernes -->
+
+
+			<!-- sabado -->
+			<div id="sabado" class="carousel slide carousel-init" data-ride="carousel">
+				<!-- Indicators -->
+				<div class="carousel__week">
+					<div class="carousel-inner">
+					    <div class="item active">
+				  			<div class="option__shop__back media__image" style="background-image: url(images/sabado/1.jpg)">
+				  			</div>
+					    </div>
+					     <div class="item ">
+				  			<div class="option__shop__back media__image" style="background-image: url(images/sabado/2.jpg)">
+				  			</div>
+					    </div>
+					</div>
+					<ol class="carousel-indicators">
+				      <li data-target="#sabado" data-slide-to="0" class="active"></li>
+				      <li data-target="#sabado" data-slide-to="1"></li>
+				    </ol>
+				</div>
+				  <!-- Left and right controls -->
+			    <a class="left carousel-control" href="#sabado" data-slide="prev">
+			      <span class="glyphicon glyphicon-chevron-left"></span>
+			      <span class="sr-only">Previous</span>
+			    </a>
+			    <a class="right carousel-control" href="#sabado" data-slide="next">
+			      <span class="glyphicon glyphicon-chevron-right"></span>
+			      <span class="sr-only">Next</span>
+			    </a>
+			</div>
+			<!-- END sabado -->
+
+			<!-- especial -->
+			<div id="especial" class="carousel slide carousel-init" data-ride="carousel">
+				<!-- Indicators -->
+				<div class="carousel__week">
+					<div class="carousel-inner">
+					    <div class="item active">
+				  			<div class="option__shop__back media__image" style="background-image: url(images/lunes/lunes.jpg)">
+				  			</div>
+					    </div>
+					     <div class="item ">
+				  			<div class="option__shop__back media__image" style="background-image: url(images/lunes/2.jpg)">
+				  			</div>
+					    </div>
+					</div>
+					<ol class="carousel-indicators">
+				      <li data-target="#especial" data-slide-to="0" class="active"></li>
+				      <li data-target="#especial" data-slide-to="1"></li>
+				    </ol>
+				</div>
+				  <!-- Left and right controls -->
+			    <a class="left carousel-control" href="#especial" data-slide="prev">
+			      <span class="glyphicon glyphicon-chevron-left"></span>
+			      <span class="sr-only">Previous</span>
+			    </a>
+			    <a class="right carousel-control" href="#especial" data-slide="next">
+			      <span class="glyphicon glyphicon-chevron-right"></span>
+			      <span class="sr-only">Next</span>
+			    </a>
+			</div>
+			<!-- END sabado -->
+
 		</div>
 		<!-- CONTENIDO -->
 		<div class="contenido" id="contenido">
 			<details id="contenido_details">
 				<summary>Café 100% natural seleccionado a mano cultivado a 1750 metros SNM, no pierda la oportuni... <a class="btn" id="btn_leermas" value="Leer mas">Leer Mas</a></summary>
 				<div class="post">
-					
+					<h1>Café Kaldi - Dias de Promo</h1>
+					<p>Disfruta de las promociones que te ofrece Café Kaldi en Cúcuta</p>
+					<ul>
+						<li>Lunes a Viernes</li>
+						<li>Sabados</li>
+						<li>Dias Especiales</li>
+					</ul>
 				</div>
 			</details>
 		</div>
@@ -173,7 +372,7 @@
 
 	<!-- FOOTER -->
 	<footer class="row">
-		<div class="col-sm-4 col-md-3 footer">
+		<div class="col-xs-6 col-sm-4 col-md-3 footer">
 			<div class="col-md-12">
 				<h2 class="footer__title footer__title-init">Encuentranos<i></i></h2>
 			</div>
@@ -183,7 +382,7 @@
 				<span>local 12 - Cúcuta- Colombia</span>
 			</div>
 		</div>
-		<div class="col-sm-3 col-md-3 footer">
+		<div class="col-xs-6 col-sm-3 col-md-3 footer">
 			<div class="col-md-12">
 				<h2 class="footer__title footer__title-init">Llamanos<i></i></h2>
 			</div>
@@ -193,7 +392,7 @@
 				<span>7.00 am a 7.00 pm</span>
 			</div>		
 		</div>
-		<div class="col-sm-4 col-md-3 footer">
+		<div class="col-xs-12 col-sm-4 col-md-3 footer">
 			<div class="col-md-12">
 				<h2 class="footer__title footer__title-init">Siguenos</h2>
 			</div>
@@ -203,7 +402,7 @@
 				<span>RigcafeKaldi@gmail.com <i></i></span>
 			</div>
 		</div>
-		<div class="sm-offset-4 col-sm-4 col-md-3 footer">
+		<div class="col-xs-3 xs-offset-9 sm-offset-4 col-sm-4 col-md-3 footer">
 			<div class="col-md-12 footer__title"></div>
 			<div class="col-md-12 footer__content">
 				
@@ -214,5 +413,6 @@
 <script type="text/javascript" src="components/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="components/bbplayer/js/bbplayer.js"></script>
 <script type="text/javascript" src="components/template/loading.js"></script>
+<script type="text/javascript" src="components/template/week.js"></script>
 </body>
 </html>
