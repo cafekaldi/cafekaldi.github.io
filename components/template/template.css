@@ -770,11 +770,21 @@ a.menu_link {
 
     }
 
-    100%
+    99.9%
 
     {
 
         right: 85%; 
+
+        opacity: 0;
+
+    }
+
+    100%
+
+    {
+
+        right: 150%; 
 
         opacity: 0;
 
