@@ -1439,6 +1439,7 @@ object.option__shop__back.media__image {
         position: absolute;
         left: 39%;
         top: 1rem;
+        padding-left: 0;
     }
 
     img.logo__imagen {
@@ -1449,6 +1450,7 @@ object.option__shop__back.media__image {
     img.logo__imagen-init {
         height: 65px;
         width: auto !important;
+        left: 0;
     }
 
    
@@ -1536,16 +1538,16 @@ object.option__shop__back.media__image {
     }
 
     div.carousel,.galeria-init  {
-        width: 88vw;
-        height: 50vw;
+        width: 100vw;
+        height: 55vw;
         margin: 0 auto;
         margin-bottom: 5rem;
     }
 
     .carousel-inner
     {
-        width: 88vw !important;
-        height: 50vw !important;
+        width: 100vw !important;
+        height: 55vw !important;
     }
 
     ol.carousel-indicators {

@@ -80,53 +80,56 @@
 	<section class="playlist">
 		<!-- PLAY LIST -->
 		<div id="playlist_dropdown" class="playlist playlist-init dropdown">
-			<div id='player'>
-				<h3 class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1">Radio CafeKaldi</h3>
-				<ul id='playlist' class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" >
-					<!--bbplayer -->
-						<div class="bbplayer" id="bbplayer">
-					      <span class="bb-rewind"></span>
-					      <span id="btn_play" class="bb-play"></span>
-					      <span class="bb-forward"></span>
-					      <div class="playerWindow">
-					        <div class="bb-track-display">
-					          <span class="bb-trackTime">--:--</span>
-					          <span class="bb-trackTitle">&nbsp;</span>
-					          <span class="bb-trackLength">--:--</span>
-					        </div>
-					        <div class="bb-album-display">
-					          <span class="bb-artist">Brian Browne Trio</span> -
-					          <span class="bb-album">Blue Browne</span>
-					        </div>
-					      </div>
-					      <!--
-					      <span class="bb-albumCover">&nbsp;</span>
-					      -->
-					      <audio loop id="bbaudio">
-					        <source
-					           src="public/music_1.mp4" type="audio/mp4"
-					           data-album="Blue Browne"
-					           data-artist="Brian Browne Trio"
-					           data-image="media/Blue Browne small.jpg"/>
-					        <source
-					           src="public/music_2.mp4" type="audio/mp4"
-					           data-album="Blue Browne"
-					           data-artist="Brian Browne Trio"
-					           data-image="media/Beatles small.jpg"/>
-					        HTML5 Audior Not Available
-					      </audio>
-					     
-					      <!--
-					      <div>Optional debug panel:</div>
-					      <div class="bb-debug"></div>
-					      -->
-				    	</div>
-				    <!-- end bbplayer -->
-				     <div class="bb-listplayer">
-					      	<li class="bb-music" onclick="loadTrack(0)">music_1</li>
-					      	<li class="bb-music" onclick="loadTrack(1)">music_2</li>
-					 </div>
-				</ul>
+			<!-- lunes -->
+			<div id="lunes" class="playlist__content">
+				<div id='player'>
+					<h3 class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1">Radio CafeKaldi</h3>
+					<ul id='playlist' class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" >
+						<!--bbplayer -->
+							<div class="bbplayer" id="bbplayer">
+						      <span class="bb-rewind"></span>
+						      <span id="btn_play" class="bb-play"></span>
+						      <span class="bb-forward"></span>
+						      <div class="playerWindow">
+						        <div class="bb-track-display">
+						          <span class="bb-trackTime">--:--</span>
+						          <span class="bb-trackTitle">&nbsp;</span>
+						          <span class="bb-trackLength">--:--</span>
+						        </div>
+						        <div class="bb-album-display">
+						          <span class="bb-artist">Brian Browne Trio</span> -
+						          <span class="bb-album">Blue Browne</span>
+						        </div>
+						      </div>
+						      <!--
+						      <span class="bb-albumCover">&nbsp;</span>
+						      -->
+						      <audio loop id="bbaudio">
+						        <source
+						           src="public/music_1.mp4" type="audio/mp4"
+						           data-album="Blue Browne"
+						           data-artist="Brian Browne Trio"
+						           data-image="media/Blue Browne small.jpg"/>
+						        <source
+						           src="public/music_2.mp4" type="audio/mp4"
+						           data-album="Blue Browne"
+						           data-artist="Brian Browne Trio"
+						           data-image="media/Beatles small.jpg"/>
+						        HTML5 Audior Not Available
+						      </audio>
+						     
+						      <!--
+						      <div>Optional debug panel:</div>
+						      <div class="bb-debug"></div>
+						      -->
+					    	</div>
+					    <!-- end bbplayer -->
+					     <div class="bb-listplayer">
+						      	<li class="bb-music" onclick="loadTrack(0)">music_1</li>
+						      	<li class="bb-music" onclick="loadTrack(1)">music_2</li>
+						 </div>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</section>
