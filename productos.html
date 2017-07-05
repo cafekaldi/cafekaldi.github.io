@@ -11,6 +11,8 @@
 	</script>
 	<link rel="stylesheet" type="text/css" href="components/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="components/template/template.css">
+	<link rel="stylesheet" type="text/css" href="components/bbplayer/css/bbplayer-minimal.css">
+	<link rel="stylesheet" type="text/css" href="components/template/bbplayer.css">
 </head>
 <body class="">
 <div class="main container">
@@ -76,33 +78,59 @@
 	</header>
 
 	<!-- PLAY LIST -->
-	<div class="playlist dropdown">
-		<div id='player'>
-			<h3 class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1">PLAY - LIST</h3>
-				<ul id='playlist' class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" >
-				<audio controls='' id='audio' preload='auto' tabindex='0' type='audio/mpeg'
-				style="opacity: 0.8">
-				<source src='public/music_1.mp4' type='audio/mp4'/>
-				Hola, tu navegador no está actualizado y no puede mostrar este contenido.
-				</audio>
-				<li class='active'><a href="#" music='public/music_1.mp4'>Nombre de la primera canción</a></li>
-				<li><a href="#" music='public/music_2.mp4'>Nombre de la segunda canción</a></li>
-				<li><a href="#" music='public/music_1.mp4'>Nombre de la tercera canción</a></li>
-			</ul>
+		
+	<section class="playlist">
+		<!-- PLAY LIST -->
+		<div id="playlist_dropdown" class="playlist playlist-init dropdown">
+			<!-- lunes -->
+			<div id="lunes" class="playlist__content">
+				<div id='player'>
+					<h3 class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1">Radio CafeKaldi</h3>
+					<ul id='playlist' class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" >
+						<!--bbplayer -->
+							<div class="bbplayer" id="bbplayer">
+						      <span class="bb-rewind"></span>
+						      <span id="btn_play" class="bb-play"></span>
+						      <span class="bb-forward"></span>
+						      <div class="playerWindow">
+						        <div class="bb-track-display">
+						          <span class="bb-trackTime">--:--</span>
+						          <span class="bb-trackTitle">&nbsp;</span>
+						          <span class="bb-trackLength">--:--</span>
+						        </div>
+						        <div class="bb-album-display">
+						          <span class="bb-artist">Lunes</span> -
+						          <span class="bb-album">Cafe Kaldi</span>
+						        </div>
+						      </div>
+						      <!--
+						      <span class="bb-albumCover">&nbsp;</span>
+						      -->
+						      <audio loop id="bbaudio">
+						       
+						        HTML5 Audior Not Available
+						      </audio>
+						     
+						      <!--
+						      <div>Optional debug panel:</div>
+						      <div class="bb-debug"></div>
+						      -->
+					    	</div>
+					    <!-- end bbplayer -->
+					     <div class="bb-listplayer" id="bb-listplayer">
+						      
+						 </div>
+					</ul>
+				</div>
+			</div>
 		</div>
-		<script>
-		//<![CDATA[
-		var audio;var playlist;var tracks;var current;initaudio();function initaudio(){current=0;audio=$('audio');playlist=$('#playlist');tracks=playlist.find('li a');len=tracks.length-1;audio[0].volume=1;playlist.find('li a').click(function(e){e.preventDefault();link=$(this);current=link.parent().index();runaudio(link,audio[0])});audio[0].addEventListener('ended',function(e){current++;if(current>len){current=0;link=playlist.find('a')[0]}else{link=playlist.find('a')[current]}runaudio($(link),audio[0])})}function runaudio(link,player){player.src=link.attr('music');par=link.parent();par.addClass('active').siblings().removeClass('active');audio[0].load();audio[0].play()}
-		//]]>
-		</script>
-	</div>
+	</section>
 	
 
 
 	<!-- GALERIA -->
-
 	<div class="galeria ">
-	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+	<div id="myCarousel" class="carousel slide open" data-ride="carousel">
 			<!-- Indicators -->
 		    <ol class="carousel-indicators">
 		      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
