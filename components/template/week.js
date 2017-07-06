@@ -38,7 +38,7 @@ function openPromocion()
 
 function viewGalery(dayOfWeek)
 {
-	$('.carousel').removeClass('open');
+	//$('.carousel').removeClass('open');
 	$('.carousel').addClass('open-fast');
 	$('#menu_promocion').removeClass('open');
 	if ($.find('#myCarousel')) {
@@ -66,12 +66,15 @@ function viewGalery(dayOfWeek)
 
 function openGaleryDayOfWeek()
 {	
-	if ($.find('#myCarousel')) {
+	if ($('#myCarousel').length) {
 			$('#myCarousel').addClass('open');
-	}else
+			console.log($('#myCarousel'))
+	} else
 	{
 		let fecha = new Date();
+		console.log(fecha);
 		$($('.galeria').find('.carousel')[fecha.getDay() - 1]).addClass('open');
+		console.log($($('.galeria').find('.carousel')[fecha.getDay() - 1]))
 	}
 	
 }
