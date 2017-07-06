@@ -1,7 +1,7 @@
 $( document ).ready(function() {
 
 	let duracionAnimacion = 4500;
-	setTimeout( openGaleryDayOfWeek(),duracionAnimacion);
+	setTimeout( openGaleryDayOfWeek(),duracionAnimacion + 1000);
 	openPlayListDayOfWeek();
 });
 
