@@ -300,9 +300,9 @@ header
 
     background: #3f3f41;
 
-    height: 500px !important;
+    min-height: 500px !important;
 
-    width: calc( 500px * 1.8);
+    min-width: calc( 500px * 1.8);
 
     position: relative;
 
