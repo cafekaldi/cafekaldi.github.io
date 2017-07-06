@@ -5,17 +5,23 @@
 	
 	<meta charset="utf-8">
 	<script
-	  src="https://code.jquery.com/jquery-3.2.1.min.js"
-	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-	  crossorigin="anonymous">
+	  src="components/jquery/dist/jquery.min.js">
 	</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="components/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="components/template/template.css">
+	<link rel="stylesheet" type="text/css" href="components/bbplayer/css/bbplayer-minimal.css">
+	<link rel="stylesheet" type="text/css" href="components/template/bbplayer.css">
 </head>
-<body class="">
+<body>
 <div class="main container">
 	<header>
-
+		<div>
+			<a href="#" onclick="openMenu()" class="movile_menu">MENU</a>
+		</div>
+		<div>
+			<a href="#" onclick="openPromocion()" class="movile_promociones">PROMOS</a>
+		</div>
 		<div class="logo col-md-2 col-sm-2">
 			<a href="/index.html">
 				<img class="logo__imagen" src="components/template/logo.png">
@@ -24,7 +30,7 @@
 			<!--<img class="logo__imagen-init" src="components/template/logo_black.png">-->
 		</div> 
 		<div class="menu col-md-10 col-sm-10">
-			<nav class="menu_section row">
+			<nav id="menu_section" class="menu_section row">
 				<div class="menu_item text-center col-md-2">
 					<a class="menu_link " href="/historia.html">HISTORIA </a>
 				</div>
@@ -41,28 +47,28 @@
 					<a class="menu_link " href="/cocina-kaldi.html">COCINA-KALDI</a>
 				</div>
 			</nav>
-			<nav class="menu_promocion row">
+			<nav id="menu_promocion" class="menu_promocion row">
 				<!--<div class="barra-load"></div>-->
-				<div class="promocion_item promocion_item--especial text-center col-md-2">
-					<a class="menu_link" href="#">Especial</a>
+				<div class="promocion_item promocion_item--especial text-center col-md-2"  onclick="viewGalery('especial')">
+					<a class="menu_link" href="#" onclick="viewGalery('especial')">Especial</a>
 				</div>
-				<div class="promocion_item promocion_item--lunes text-center col-md-2">
-					<a class="menu_link" href="#">Lunes</a>
+				<div class="promocion_item promocion_item--lunes text-center col-md-2" onclick="viewGalery('lunes')">
+					<a class="menu_link" href="#" onclick="viewGalery('lunes')">Lunes</a>
 				</div> 
-				<div class="promocion_item promocion_item--martes text-center col-md-2">
-					<a class="menu_link" href="#">Martes</a>
+				<div class="promocion_item promocion_item--martes text-center col-md-2" onclick="viewGalery('martes')">
+					<a class="menu_link" href="#" onclick="viewGalery('martes')">Martes</a>
 				</div> 
-				<div class="promocion_item promocion_item--miercoles text-center col-md-2">
-					<a class="menu_link" href="#">Miércoles</a>
+				<div class="promocion_item promocion_item--miercoles text-center col-md-2" onclick="viewGalery('miercoles')">
+					<a class="menu_link" href="#" onclick="viewGalery('miercoles')">Miércoles</a>
 				</div> 
-				<div class="promocion_item promocion_item--jueves text-center col-md-2">
-					<a class="menu_link" href="#">Jueves</a>
+				<div class="promocion_item promocion_item--jueves text-center col-md-2" onclick="viewGalery('jueves')">
+					<a class="menu_link" href="#" onclick="viewGalery('jueves')">Jueves</a>
 				</div> 
-				<div class="promocion_item promocion_item--viernes text-center col-md-2">
-					<a class="menu_link" href="#">Viernes</a>
+				<div class="promocion_item promocion_item--viernes text-center col-md-2" onclick="viewGalery('viernes')">
+					<a class="menu_link" href="#" onclick="viewGalery('viernes')">Viernes</a>
 				</div> 
-				<div class="promocion_item promocion_item--sabado text-center col-md-2">
-					<a class="menu_link" href="#">Sábado</a>
+				<div class="promocion_item promocion_item--sabado text-center col-md-2" onclick="viewGalery('sabado')">
+					<a class="menu_link" href="#" onclick="viewGalery('sabado')">Sábado</a>
 				</div> 
 			</nav>
 		</div>
@@ -76,60 +82,101 @@
 	</header>
 
 	<!-- PLAY LIST -->
-	<div class="playlist dropdown">
-		<div id='player'>
-			<h3 class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1">PLAY - LIST</h3>
-				<ul id='playlist' class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" >
-				<audio controls='' id='audio' preload='auto' tabindex='0' type='audio/mpeg'
-				style="opacity: 0.8">
-				<source src='public/music_1.mp4' type='audio/mp4'/>
-				Hola, tu navegador no está actualizado y no puede mostrar este contenido.
-				</audio>
-				<li class='active'><a href="#" music='public/music_1.mp4'>Nombre de la primera canción</a></li>
-				<li><a href="#" music='public/music_2.mp4'>Nombre de la segunda canción</a></li>
-				<li><a href="#" music='public/music_1.mp4'>Nombre de la tercera canción</a></li>
-			</ul>
+		
+	<section class="playlist">
+		<!-- PLAY LIST -->
+		<div id="playlist_dropdown" class="playlist playlist-init dropdown">
+			<!-- lunes -->
+			<div class="playlist__content">
+				<div id='player'>
+					<h3 class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1">Radio CafeKaldi</h3>
+					<ul id='playlist' class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" >
+						<!--bbplayer -->
+							<div class="bbplayer" id="bbplayer">
+						      <span class="bb-rewind"></span>
+						      <span id="btn_play" class="bb-play"></span>
+						      <span class="bb-forward"></span>
+						      <div class="playerWindow">
+						        <div class="bb-track-display">
+						          <span class="bb-trackTime">--:--</span>
+						          <span class="bb-trackTitle">&nbsp;</span>
+						          <span class="bb-trackLength">--:--</span>
+						        </div>
+						        <div class="bb-album-display">
+						          <span class="bb-artist">Lunes</span> -
+						          <span class="bb-album">Cafe Kaldi</span>
+						        </div>
+						      </div>
+						      <!--
+						      <span class="bb-albumCover">&nbsp;</span>
+						      -->
+						      <audio loop id="bbaudio">
+						       
+						        HTML5 Audior Not Available
+						      </audio>
+						     
+						      <!--
+						      <div>Optional debug panel:</div>
+						      <div class="bb-debug"></div>
+						      -->
+					    	</div>
+					    <!-- end bbplayer -->
+					     <div class="bb-listplayer" id="bb-listplayer">
+						      
+						 </div>
+					</ul>
+				</div>
+			</div>
 		</div>
-		<script>
-		//<![CDATA[
-		var audio;var playlist;var tracks;var current;initaudio();function initaudio(){current=0;audio=$('audio');playlist=$('#playlist');tracks=playlist.find('li a');len=tracks.length-1;audio[0].volume=1;playlist.find('li a').click(function(e){e.preventDefault();link=$(this);current=link.parent().index();runaudio(link,audio[0])});audio[0].addEventListener('ended',function(e){current++;if(current>len){current=0;link=playlist.find('a')[0]}else{link=playlist.find('a')[current]}runaudio($(link),audio[0])})}function runaudio(link,player){player.src=link.attr('music');par=link.parent();par.addClass('active').siblings().removeClass('active');audio[0].load();audio[0].play()}
-		//]]>
-		</script>
-	</div>
+	</section>
 	
 
 
 	<!-- GALERIA -->
-
-	<div class="galeria ">
-	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+	<div class="galeria " id="galeria">
+		<div id="myCarousel" class="carousel slide open" data-ride="carousel">
 			<!-- Indicators -->
 		    <ol class="carousel-indicators">
 		      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 		      <li data-target="#myCarousel" data-slide-to="1"></li>
 		      <li data-target="#myCarousel" data-slide-to="2"></li>
+		      <li data-target="#myCarousel" data-slide-to="4"></li>
+		      <li data-target="#myCarousel" data-slide-to="5"></li>
+		      <li data-target="#myCarousel" data-slide-to="6"></li>
+		      <li data-target="#myCarousel" data-slide-to="7"></li>
 		    </ol>
 			<div class="carousel-inner">
-			     <div class="item ">
-		  			<div class="option__shop__back media__image" style="background-image: url(images/productos.jpg)">
+			     <div class="item active">
+		  			<div class="option__shop__back media__image" style="background-image: url(images/Productos/1.jpg)">
 		  			</div>
-					<div class="carousel-caption">
-						<h3>COMPARTE GRANDE MOMENTOS EN CAFE KALDI</h3>
-					</div>
 			    </div>
 			    <div class="item ">
-		  			<div class="option__shop__back media__image" style="background-image: url(images/productos_2.jpg)">
+		  			<div class="option__shop__back media__image" style="background-image: url(images/Productos/2.jpg)">
 		  			</div>
-					<div class="carousel-caption">
-						<h3>CAFE, VINOS, TABLA DE QUESOS EN CAFE KALDI</h3>
-					</div>
 			    </div>
-			    <div class="item active">
-		  			<div class="option__shop__back media__image" style="background-image: url(images/productos_3.jpg)">
+			    <div class="item">
+		  			<div class="option__shop__back media__image" style="background-image: url(images/Productos/3.jpg)">
 		  			</div>
-					<div class="carousel-caption">
-						<h3>DISFRUTA DE DELICIOSOS SABORES EN CAFE KALDI</h3>
-					</div>
+			    </div>
+			    <div class="item">
+		  			<div class="option__shop__back media__image" style="background-image: url(images/Productos/4.jpg)">
+		  			</div>
+			    </div>
+			    <div class="item">
+		  			<div class="option__shop__back media__image" style="background-image: url(images/Productos/5.jpg)">
+		  			</div>
+			    </div>
+			    <div class="item">
+		  			<div class="option__shop__back media__image" style="background-image: url(images/Productos/6.jpg)">
+		  			</div>
+			    </div>
+			    <div class="item">
+		  			<div class="option__shop__back media__image" style="background-image: url(images/Productos/7.jpg)">
+		  			</div>
+			    </div>
+			    <div class="item">
+		  			<div class="option__shop__back media__image" style="background-image: url(images/Productos/8.jpg)">
+		  			</div>
 			    </div>
 			 </div>
 			  <!-- Left and right controls -->
@@ -141,8 +188,16 @@
 		      <span class="glyphicon glyphicon-chevron-right"></span>
 		      <span class="sr-only">Next</span>
 		    </a>
-		</div>	
+		</div>		
 	</div>
+	<script type="text/javascript">
+		function importGaleria() {
+			$.get("/imports/galeria_promociones.html", function (data) {
+                $("#galeria").append(data);
+            });
+		};
+		importGaleria();
+	</script>
 	<div class="contenido" id="contenido">
 		<details id="contenido_details">
 			<summary>Ofreces un gran variedd de Cafés, Vinos, Entradas con nuestras tablas de quesos, licor... <a class="btn" id="btn_leermas" value="Leer mas">Leer Mas</a></summary>
@@ -207,45 +262,21 @@
 	</div>
 
 	<!-- FOOTER -->
-	<footer class="row">
-		<div class="col-md-3 footer">
-			<div class="col-md-12">
-				<h2 class="footer__title footer__title-init">Encuentranos<i></i></h2>
-			</div>
-			<div class="col-md-12 footer__content">
-				<span>Centro Comercial</span>
-				<span>Holiday inn</span>
-				<span>local 12 - Cúcuta- Colombia</span>
-			</div>
-		</div>
-		<div class="col-md-3 footer">
-			<div class="col-md-12">
-				<h2 class="footer__title footer__title-init">Llamanos<i></i></h2>
-			</div>
-			<div class="col-md-12 footer__content">
-				<span>5713261</span>
-				<span>De Lunes a Sábado</span>
-				<span>7.00 am a 7.00 pm</span>
-			</div>		
-		</div>
-		<div class="col-md-3 footer">
-			<div class="col-md-12">
-				<h2 class="footer__title footer__title-init">Siguenos</h2>
-			</div>
-			<div class="col-md-12 footer__content">
-				<span>@cafekaldi <i></i></span>
-				<span>cafekaldi <i></i></span>
-				<span>RigcafeKaldi@gmail.com <i></i></span>
-			</div>
-		</div>
-		<div class="col-md-3 footer">
-			<div class="col-md-12 footer__title"></div>
-			<div class="col-md-12 footer__content container">
-			</div>
-		</div>
+	<footer class="row" id="footer">
 	</footer>
+	<script type="text/javascript">
+		function importGaleria() {
+			$.get("/imports/footer.html", function (data) {
+                $("#footer").append(data);
+            });
+		};
+		importGaleria();
+	</script>
+	<!-- END FOOTER -->
 </div>
 <script type="text/javascript" src="components/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="components/bbplayer/js/bbplayer.js"></script>
 <script type="text/javascript" src="components/template/loading.js"></script>
+<script type="text/javascript" src="components/template/week.js"></script>
 </body>
 </html>

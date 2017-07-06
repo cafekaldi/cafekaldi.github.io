@@ -12,9 +12,6 @@ $( document ).ready(function() {
     		$("#dropdownMenu1").attr('aria-expanded','true');	
     	}
     },10000);
-
-   
-    
 });
 
 function initloading() {
@@ -31,4 +28,13 @@ function initloading() {
 		}
 	}, velocidad);
 
+}
+
+function loadTrack(tracknumber){
+	bbplayers[0].__proto__.loadTrack(tracknumber);
+	setTimeout(function () {
+		$("#player").addClass('open');
+    	$("#dropdownMenu1").attr('aria-expanded','true');
+	});
+	return;
 }

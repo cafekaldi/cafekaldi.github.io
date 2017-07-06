@@ -9,7 +9,7 @@ span.bb-rewind {
 }
 
 .playerWindow {
-    width: 64%;
+    width: 80%;
     overflow: hidden;
     float: right;
     position: absolute;
@@ -29,6 +29,7 @@ span.bb-rewind {
     float: left;
     text-overflow: ellipsis;
     overflow: hidden;
+    height: 2rem;
 }
 
 span.bb-play.bb-paused {
@@ -54,7 +55,27 @@ span.bb-play.bb-playing {
 }
 
 ul#playlist {
-    background: rgba(0, 0, 0, 0.35) !important;
+    background: rgba(0, 0, 0, 0.35);
     border-radius: 0 !important;
     padding-bottom: : 1px !important;
+}
+
+@media only screen and (max-width: 768px){
+
+     ul#playlist {
+        width: 100vw !important;
+        height: 30vh;
+        background: rgba(34, 31, 32, 0.97) !important;
+        z-index: 1000;
+        position: fixed;
+        top: 70vh;
+        max-height: 30vh;
+        overflow: overlay;
+        right: 0;
+        box-shadow: 0px -3px 5px -2px black !important;
+        padding-top: 0;
+        animation-duration: 1s;
+        transition-duration: 1s;
+    }
+
 }
