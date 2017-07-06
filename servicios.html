@@ -7,15 +7,21 @@
 	<script
 	  src="components/jquery/dist/jquery.min.js">
 	</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="components/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="components/template/template.css">
 	<link rel="stylesheet" type="text/css" href="components/bbplayer/css/bbplayer-minimal.css">
 	<link rel="stylesheet" type="text/css" href="components/template/bbplayer.css">
 </head>
-<body class="">
+<body>
 <div class="main container">
 	<header>
-
+		<div>
+			<a href="#" onclick="openMenu()" class="movile_menu">MENU</a>
+		</div>
+		<div>
+			<a href="#" onclick="openPromocion()" class="movile_promociones">PROMOS</a>
+		</div>
 		<div class="logo col-md-2 col-sm-2">
 			<a href="/index.html">
 				<img class="logo__imagen" src="components/template/logo.png">
@@ -24,7 +30,7 @@
 			<!--<img class="logo__imagen-init" src="components/template/logo_black.png">-->
 		</div> 
 		<div class="menu col-md-10 col-sm-10">
-			<nav class="menu_section row">
+			<nav id="menu_section"  class="menu_section row">
 				<div class="menu_item text-center col-md-2">
 					<a class="menu_link " href="/historia.html">HISTORIA </a>
 				</div>
@@ -41,27 +47,27 @@
 					<a class="menu_link " href="/cocina-kaldi.html">COCINA-KALDI</a>
 				</div>
 			</nav>
-			<nav class="menu_promocion row">
+			<nav id="menu_promocion" class="menu_promocion row">
 				<!--<div class="barra-load"></div>-->
-				<div class="promocion_item promocion_item--especial text-center col-md-2">
+				<div class="promocion_item promocion_item--especial text-center col-md-2"  onclick="viewGalery('especial')">
 					<a class="menu_link" href="#" onclick="viewGalery('especial')">Especial</a>
 				</div>
-				<div class="promocion_item promocion_item--lunes text-center col-md-2">
+				<div class="promocion_item promocion_item--lunes text-center col-md-2" onclick="viewGalery('lunes')">
 					<a class="menu_link" href="#" onclick="viewGalery('lunes')">Lunes</a>
 				</div> 
-				<div class="promocion_item promocion_item--martes text-center col-md-2">
+				<div class="promocion_item promocion_item--martes text-center col-md-2" onclick="viewGalery('martes')">
 					<a class="menu_link" href="#" onclick="viewGalery('martes')">Martes</a>
 				</div> 
-				<div class="promocion_item promocion_item--miercoles text-center col-md-2">
+				<div class="promocion_item promocion_item--miercoles text-center col-md-2" onclick="viewGalery('miercoles')">
 					<a class="menu_link" href="#" onclick="viewGalery('miercoles')">Miércoles</a>
 				</div> 
-				<div class="promocion_item promocion_item--jueves text-center col-md-2">
+				<div class="promocion_item promocion_item--jueves text-center col-md-2" onclick="viewGalery('jueves')">
 					<a class="menu_link" href="#" onclick="viewGalery('jueves')">Jueves</a>
 				</div> 
-				<div class="promocion_item promocion_item--viernes text-center col-md-2">
+				<div class="promocion_item promocion_item--viernes text-center col-md-2" onclick="viewGalery('viernes')">
 					<a class="menu_link" href="#" onclick="viewGalery('viernes')">Viernes</a>
 				</div> 
-				<div class="promocion_item promocion_item--sabado text-center col-md-2">
+				<div class="promocion_item promocion_item--sabado text-center col-md-2" onclick="viewGalery('sabado')">
 					<a class="menu_link" href="#" onclick="viewGalery('sabado')">Sábado</a>
 				</div> 
 			</nav>
@@ -413,7 +419,7 @@
 
 	<!-- FOOTER -->
 	<footer class="row">
-		<div class="col-md-3 footer">
+		<div class="col-xs-6 col-sm-4 col-md-3 footer">
 			<div class="col-md-12">
 				<h2 class="footer__title footer__title-init">Encuentranos<i></i></h2>
 			</div>
@@ -423,7 +429,7 @@
 				<span>local 12 - Cúcuta- Colombia</span>
 			</div>
 		</div>
-		<div class="col-md-3 footer">
+		<div class="col-xs-6 col-sm-3 col-md-3 footer">
 			<div class="col-md-12">
 				<h2 class="footer__title footer__title-init">Llamanos<i></i></h2>
 			</div>
@@ -433,7 +439,7 @@
 				<span>7.00 am a 7.00 pm</span>
 			</div>		
 		</div>
-		<div class="col-md-3 footer">
+		<div class="col-xs-12 col-sm-4 col-md-3 footer">
 			<div class="col-md-12">
 				<h2 class="footer__title footer__title-init">Siguenos</h2>
 			</div>
@@ -443,12 +449,14 @@
 				<span>RigcafeKaldi@gmail.com <i></i></span>
 			</div>
 		</div>
-		<div class="col-md-3 footer">
+		<div class="col-xs-3 xs-offset-9 sm-offset-4 col-sm-4 col-md-3 footer">
 			<div class="col-md-12 footer__title"></div>
-			<div class="col-md-12 footer__content container">
+			<div class="col-md-12 footer__content">
+				
 			</div>
 		</div>
 	</footer>
+
 </div>
 <script type="text/javascript" src="components/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="components/bbplayer/js/bbplayer.js"></script>

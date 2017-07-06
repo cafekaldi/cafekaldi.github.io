@@ -38,7 +38,7 @@ function openPromocion()
 
 function viewGalery(dayOfWeek)
 {
-	//$('.carousel').removeClass('open');
+	$('.carousel').removeClass('open');
 	$('.carousel').addClass('open-fast');
 	$('#menu_promocion').removeClass('open');
 	if ($.find('#myCarousel')) {

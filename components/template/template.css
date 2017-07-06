@@ -4,6 +4,14 @@ body {
 
 }
 
+a.movile_menu:hover {
+    text-decoration: none;
+}
+
+a.movile_promociones:hover {
+     text-decoration: none;
+}
+
 .post.container img {
     width: 62%;
     margin: 0 auto;
@@ -1425,18 +1433,18 @@ object.option__shop__back.media__image {
         bottom: -16px !important;
     }
 
-    .main.container.bg-white {
+    .main.container {
         padding: 0;
     }
 
 
     header {
-    position: relative;
-    position: fixed;
-    z-index: 100;
-    /*background: rgb(33, 31, 32);*/
-    width: 100%;
-    /* overflow: hidden; */
+        position: relative;
+        position: fixed;
+        z-index: 100;
+        /*background: rgb(33, 31, 32);*/
+        width: 100%;
+        /* overflow: hidden; */
     }
 
     .logo {
@@ -1496,6 +1504,7 @@ object.option__shop__back.media__image {
         padding: 0 !important;
     }
 
+
     a.menu_link {
         font-size: 18px !important;
     }
@@ -1508,6 +1517,7 @@ object.option__shop__back.media__image {
         display: block;
         width: 25%;
         text-align: center;
+        text-decoration: none;
     }
 
     a.movile_promociones {
@@ -1546,7 +1556,7 @@ object.option__shop__back.media__image {
         overflow-x: hidden;
     }
 
-    div.carousel,.galeria-init  {
+    div.carousel,.galeria,.galeria-init  {
         width: 100vw;
         height: 55vw;
         margin: 0 auto;
