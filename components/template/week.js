@@ -41,7 +41,10 @@ function viewGalery(dayOfWeek)
 	$('.carousel').removeClass('open');
 	$('.carousel').addClass('open-fast');
 	$('#menu_promocion').removeClass('open');
-
+	if ($.find('#myCarousel')) {
+		$('#myCarousel').removeClass('open');	
+	}
+	
 	// para dia especial
 	if (dayOfWeek == "especial") {
 		if ($('#especial').hasClass('active')) {
@@ -62,9 +65,15 @@ function viewGalery(dayOfWeek)
 }
 
 function openGaleryDayOfWeek()
-{
-	let fecha = new Date();
-	$($('.galeria').find('.carousel')[fecha.getDay() - 1]).addClass('open');
+{	
+	if ($.find('#myCarousel')) {
+			$('#myCarousel').addClass('open');
+	}else
+	{
+		let fecha = new Date();
+		$($('.galeria').find('.carousel')[fecha.getDay() - 1]).addClass('open');
+	}
+	
 }
 
 var listaMusica = new Array();
@@ -99,6 +108,7 @@ function openPlayListDayOfWeek()
 				name: 'U2 - With Or Without You',
 			}
 	];
+	/* martes */
 	listaMusica[1]  = [
 			{
 				source : 'public/music/martes/Green Day- Boulevard Of Broken Dreams.mp3',
@@ -111,8 +121,22 @@ function openPlayListDayOfWeek()
 			{
 				source : 'public/music/martes/Guns N Roses - Sweet Child O Mine.mp3',
 				name: 'Guns N Roses - Sweet Child O Mine',
-			}
+			},
+			{
+				source : 'public/music/martes/Nirvana - Smells Like Teen Spirit.mp3',
+				name: 'Nirvana - Smells Like Teen Spirit',
+			},
+			{
+				source : 'public/music/martes/Red Hot Chili Peppers - Californication.mp3',
+				name: 'Red Hot Chili Peppers - Californication',
+			},
+			{
+				source : 'public/music/martes/Scorpions - Wind Of Change.mp3',
+				name: 'Scorpions - Wind Of Change',
+			},
+
 	];
+	/* miercoles */
 	listaMusica[2]  = [
 			{
 				source : 'public/music/miercoles/Camila - De Que Me Sirve La Vida.mp3',

@@ -4,7 +4,11 @@ body {
 
 }
 
-
+.post.container img {
+    width: 62%;
+    margin: 0 auto;
+    display: block;
+}
 
 .main.container {
 
@@ -1234,7 +1238,7 @@ ul.galery li {
 
 object.option__shop__back.media__image {
 
-    width: 623px;
+    width: 100%;
 
 }
 
