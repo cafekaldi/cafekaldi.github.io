@@ -73,8 +73,12 @@ function openGaleryDayOfWeek()
 	{
 		let fecha = new Date();
 		console.log(fecha);
-		$($('.galeria').find('.carousel')[fecha.getDay() - 1]).addClass('open');
-		console.log($($('.galeria').find('.carousel')[fecha.getDay() - 1]))
+		// hace los intentos necesario hasta que se carga la galeria
+		while(  $($('.galeria').find('.carousel')).length < 7 )
+		{
+			$($('.galeria').find('.carousel')[fecha.getDay() - 1]).addClass('open');
+			console.log($($('.galeria').find('.carousel')[fecha.getDay() - 1]))
+		}
 	}
 	
 }
