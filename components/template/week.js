@@ -157,38 +157,94 @@ function openPlayListDayOfWeek()
 				source : 'public/music/miercoles/Juanes - Hermosa Ingrata.mp3',
 				name: 'Juanes - Hermosa Ingrata',
 			},
+			{
+				source : 'public/music/miercoles/Santiago Cruz - y si te quedas, que-.mp3',
+				name: 'Santiago Cruz - y si te quedas, que-',
+			},
+			{
+				source : 'public/music/miercoles/Shakira - Me Enamore.mp3',
+				name: 'Shakira - Me Enamore',
+			}
 
 	];
+	/*jueves*/
 	listaMusica[3]  = [
 			{
-				source : 'public/music/lunes/Hotel Carlifornia.mp3',
-				name: 'Hotel Carliforni',
+				source : 'public/music/jueves/Culture Club - Karma Chameleon.mp3',
+				name: 'Culture Club - Karma Chameleon',
 			},
 			{
-				source : 'public/music/lunes/Killing me softly.mp3',
-				name: 'Killing me softly',
+				source : 'public/music/jueves/Cyndi Lauper - Girls Just Want To Have Fun.mp3',
+				name: 'Cyndi Lauper - Girls Just Want To Have Fun',
+			},
+			{
+				source : 'public/music/jueves/Duncan Dhu - En algun lugar..mp3',
+				name: 'Duncan Dhu - En algun lugar.',
+			},
+			{
+				source : 'public/music/jueves/Modern Talking - Cheri Cheri Lady.mp3',
+				name: 'Modern Talking - Cheri Cheri Lady',
+			},
+			{
+				source : 'public/music/jueves/Soda stereo-De musica Ligera.mp3',
+				name: 'Soda stereo-De musica Ligera',
+			},
+			{
+				source : 'public/music/jueves/Vilma Palma e Vampiros - Dejame.mp3',
+				name: 'Vilma Palma e Vampiros - Dejame',
 			}
 	];
+	/*viernes*/
 	listaMusica[4]  = [
 			{
-				source : 'public/music/lunes/Hotel Carlifornia.mp3',
-				name: 'Hotel Carliforni',
+				source : 'public/music/viernes/Fonseca - Sorprenderte.mp3',
+				name: 'Fonseca - Sorprenderte',
 			},
 			{
-				source : 'public/music/lunes/Killing me softly.mp3',
+				source : 'public/music/viernes/Killing me softly.mp3',
 				name: 'Killing me softly',
+			},
+			{
+				source : 'public/music/viernes/Nirvana - Smells Like Teen Spirit.mp3',
+				name: 'Nirvana - Smells Like Teen Spirit',
+			},
+			{
+				source : 'public/music/viernes/Soda stereo-De musica Ligera.mp3',
+				name: 'Soda stereo-De musica Ligera',
+			},
+			{
+				source : 'public/music/viernes/The Chainsmokers - Closer.mp3',
+				name: 'The Chainsmokers - Closer',
+			},
+			{
+				source : 'public/music/viernes/The Weeknd - I Feel It Coming ft. Daft Punk.mp3',
+				name: 'The Weeknd - I Feel It Coming ft. Daft Punk',
 			}
 	];
+	/*sabado*/
 	listaMusica[5]  = [
 			{
-				source : 'public/music/lunes/Hotel Carlifornia.mp3',
+				source : 'public/music/sabado/Clean Bandit - Symphony.mp3',
 				name: 'Hotel Carliforni',
 			},
 			{
-				source : 'public/music/lunes/Killing me softly.mp3',
-				name: 'Killing me softly',
+				source : 'public/music/sabado/Ed Sheeran - Shape of You.mp3',
+				name: 'Ed Sheeran - Shape of You',
+			},
+			{
+				source : 'public/music/sabado/The Chainsmokers & Coldplay - Something Just Like This.mp3',
+				name: 'The Chainsmokers & Coldplay - Something Just Like This',
+			},
+			{
+				source : 'public/music/sabado/The Chainsmokers - Closer.mp3',
+				name: 'The Chainsmokers - Closer',
+			},
+			{
+				source : 'public/music/sabado/The Weeknd - I Feel It Coming ft. Daft Punk.mp3',
+				name: 'The Weeknd - I Feel It Coming ft. Daft Punk',
 			}
 	];
+	/*domingo igual al lunes*/
 	listaMusica[6]  = [
 			{
 				source : 'public/music/lunes/Hotel Carlifornia.mp3',
@@ -197,6 +253,22 @@ function openPlayListDayOfWeek()
 			{
 				source : 'public/music/lunes/Killing me softly.mp3',
 				name: 'Killing me softly',
+			},
+			{
+				source : 'public/music/lunes/Maroon 5 - Sunday Morning.mp3',
+				name: 'Maroon 5 - Sunday Morning',
+			},
+			{
+				source : 'public/music/lunes/Phil Collins - True Colors.mp3',
+				name: 'Phil Collins - True Colors',
+			},
+			{
+				source : 'public/music/lunes/Radiohead - Creep.mp3',
+				name: 'Radiohead - Creep',
+			},
+			{
+				source : 'public/music/lunes/U2 - With Or Without You.mp3',
+				name: 'U2 - With Or Without You',
 			}
 	];
 
