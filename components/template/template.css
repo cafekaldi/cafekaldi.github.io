@@ -33,7 +33,15 @@ a.movile_menu {
     display: none;
 }
 
+img.icon {
+    width: 16px;
+    vertical-align: text-top;
+}
 
+img.responsive
+{
+    width: 100%;
+}
 
 
 /*----- [menu] -----*/
