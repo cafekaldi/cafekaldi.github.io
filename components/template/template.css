@@ -295,6 +295,20 @@ header
 
 }
 
+.galeria-init {
+    
+
+    background: #3f3f41;
+
+    height: 500px !important;
+
+    width: calc( 500px * 1.8);
+
+    position: relative;
+
+    margin: 0 auto;
+}
+
 
 
 .item.active {
