@@ -184,7 +184,7 @@ header
 
 .promocion_item--especial {
 
-    border-color: #ac1c21;
+    border-color: #67a244;
 
     width: 17.1%;
 
@@ -196,13 +196,14 @@ header
 
 .promocion_item--lunes {
 
-    border-color: #ed1b23;
+    
+    border-color: #006837;
 
 }
 
 .promocion_item--martes {
 
-    border-color: #f5811e;
+    border-color: #d1e287;
 
 }
 
@@ -214,19 +215,19 @@ header
 
 .promocion_item--jueves {
 
-    border-color: #d1e287;
+    border-color: #f5811e;
 
 }
 
 .promocion_item--viernes {
 
-    border-color: #006837;
+    border-color: #ed1b23;
 
 }
 
 .promocion_item--sabado {
 
-    border-color: #67a244;
+    border-color: #ac1c21;
 
 }
 
