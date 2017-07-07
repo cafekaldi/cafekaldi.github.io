@@ -1584,6 +1584,8 @@ object.option__shop__back.media__image {
         height: 55vw;
         margin: 0 auto;
         margin-bottom: 5rem;
+        min-width: inherit !important;
+        min-height: inherit !important;
     }
 
     .carousel-inner
@@ -1712,6 +1714,7 @@ object.option__shop__back.media__image {
 
     img.logo__imagen-init {
         height: 40px !important;
+        left: calc(50% - 15px);
     }
 
     a.movile_menu {
