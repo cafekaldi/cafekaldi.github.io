@@ -1458,8 +1458,8 @@ object.option__shop__back.media__image {
 
     .main.container {
         padding: 0;
+        overflow-x: hidden;
     }
-
 
     header {
         position: relative;
