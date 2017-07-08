@@ -4,6 +4,48 @@ body {
 
 }
 
+
+.form-header {
+    display: none;
+}
+
+div#AutoNumber1 {
+    background: red !important;
+}
+
+.tdmain {
+    background: #606062;
+}
+
+
+object .form-header {
+    display: none;
+}
+
+object div#AutoNumber1 {
+    background: red !important;
+}
+
+object .tdmain {
+    background: #606062;
+}
+
+a.promo {
+    position: absolute;
+    top: 1rem;
+    z-index: 100;
+    padding: 1rem;
+    padding-left: 1.5rem;
+    background: #67a244;
+    color: white;
+    text-shadow: -2px 2px 10px #000000;
+}
+a.promo:hover
+{
+    text-decoration: none;
+    transform: scale(1.1);
+}
+
 a.movile_menu:hover {
     text-decoration: none;
 }
@@ -757,7 +799,7 @@ a.menu_link {
 
     95%{
 
-       right: 100%; 
+       right: 105%; 
 
        opacity: 1;
 
@@ -799,11 +841,17 @@ a.menu_link {
 
     }
 
+    90% {
+       width: 8.5%; 
+    }
+
     95%{
 
-       right: 83%; 
+       right: 90%; 
 
        opacity: 1;
+
+       width: 5%;
 
     }
 
@@ -814,6 +862,8 @@ a.menu_link {
         right: 85%; 
 
         opacity: 0;
+
+        width: 0%;
 
     }
 
@@ -836,6 +886,7 @@ a.menu_link {
     0%{
 
        opacity: 1;
+       transition: scale(1.1);
 
     }
 
@@ -844,6 +895,7 @@ a.menu_link {
     {
 
         opacity: 0;
+        transition: scale(1);
 
     }
 
@@ -1109,9 +1161,9 @@ ul#playlist {
 
 #contenido summary {
 
-    width: 94%;
+    width: 80%;
 
-    margin: 0 auto;
+    margin-left: 5%;
 
     font-size: 1.8rem;
 
@@ -1127,7 +1179,7 @@ ul#playlist {
 
 #contenido a.btn {
 
-    right: 0;
+    right: -10%;
 
     position: absolute;
 
@@ -1136,6 +1188,8 @@ ul#playlist {
     background: #3f3f41;
 
     color: white;
+
+    top: 25%;
 
 }
 
@@ -1689,6 +1743,48 @@ object.option__shop__back.media__image {
         font-size: xx-large;
         text-align: center;
     }
+
+    div#bbplayer {
+        height: 40px;
+    }
+
+    span#btn_play {
+        border-radius: 0;
+        border: 1px solid rgba(0, 0, 0, 0.01) !important;
+        /* background: #6f1d1d; */
+        background-size: 78%;
+        height: 40px !important;
+        width: 40px !important;
+    }
+
+    .playerWindow {
+        top: 10px !important;
+    }
+
+    summary {
+        width: 90% !important;
+    }
+
+    a#btn_leermas {
+        right: 0% !important;
+    }
+
+    div#bbplayer {
+        background: #171616;
+        border-right: 5px solid #171616;
+    }
+
+    span.bb-rewind {
+        height: 20px !important;
+        width: 20px !important;
+        background-size: 70%;
+    }
+
+    span.bb-forward {
+        height: 20px !important;
+        width: 20px !important;
+        background-size: 75%;
+    }
 }
 
 
@@ -1730,7 +1826,6 @@ object.option__shop__back.media__image {
     .menu.col-md-10.col-sm-10 {
         top: 46px;
     }
-
 
 }
 
