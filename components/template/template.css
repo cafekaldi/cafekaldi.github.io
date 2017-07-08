@@ -4,6 +4,32 @@ body {
 
 }
 
+
+.form-header {
+    display: none;
+}
+
+div#AutoNumber1 {
+    background: red !important;
+}
+
+.tdmain {
+    background: #606062;
+}
+
+
+object .form-header {
+    display: none;
+}
+
+object div#AutoNumber1 {
+    background: red !important;
+}
+
+object .tdmain {
+    background: #606062;
+}
+
 a.promo {
     position: absolute;
     top: 1rem;
