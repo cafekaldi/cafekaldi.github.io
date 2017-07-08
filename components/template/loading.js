@@ -9,9 +9,21 @@ $( document ).ready(function() {
     	if ($('#btn_play').hasClass('bb-paused')) {
     		$('#btn_play').click();
     		$("#player").addClass('open');
-    		$("#dropdownMenu1").attr('aria-expanded','true');	
+    		$("#dropdownMenu1").attr('aria-expanded','true');
+    		$($('body')[0]).css('padding-bottom','30vh');	
     	}
     },10000);
+
+    $("#player").on('click',function(){
+    	if(!$("#player").hasClass('open')){
+    		$($('body')[0]).css('padding-bottom','30vh');
+    	}else
+    	{
+    		console.log('oculto');
+    		$($('body')[0]).css('padding-bottom','1rem');
+    	}
+    	console.log('clikc');
+    })
 });
 
 function initloading() {

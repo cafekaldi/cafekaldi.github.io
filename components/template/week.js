@@ -82,6 +82,11 @@ function openGaleryDayOfWeek()
 		while(  $($('.galeria').find('.carousel')).length < 7 );
 
 		$($('.galeria').find('.carousel')[fecha.getDay() - 1]).addClass('open');
+
+		let myid = $($('.galeria').find('.carousel')[fecha.getDay() - 1]).attr('id');
+	    let color = $($('.promocion_item--'+myid)[0]).css('border-color');
+	    console.log(color);
+		$($('.galeria').find('.carousel')[fecha.getDay() - 1]).prepend('<a class="promo" onclick="viewGalery(\''+myid+'\')" style="background-color:'+color+';">Platos Promo hoy ¡'+myid.toUpperCase()+'! </a>');
 		console.log($($('.galeria').find('.carousel')[fecha.getDay() - 1]))
 		console.log('finish')
 	}
