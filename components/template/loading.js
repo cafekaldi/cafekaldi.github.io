@@ -10,19 +10,24 @@ $( document ).ready(function() {
     		$('#btn_play').click();
     		$("#player").addClass('open');
     		$("#dropdownMenu1").attr('aria-expanded','true');
-    		$($('body')[0]).css('padding-bottom','30vh');	
+            if ( ventana_ancho <= 820 ) {
+    		  $($('body')[0]).css('padding-bottom','30vh');	
+            }
     	}
     },10000);
 
     $("#player").on('click',function(){
-    	if(!$("#player").hasClass('open')){
-    		$($('body')[0]).css('padding-bottom','30vh');
-    	}else
-    	{
-    		console.log('oculto');
-    		$($('body')[0]).css('padding-bottom','1rem');
-    	}
-    	console.log('clikc');
+        var ventana_ancho = $(window).width();
+        console.log($(window).width())
+        if ( ventana_ancho <= 820 ) {
+            if(!$("#player").hasClass('open')){
+                $($('body')[0]).css('padding-bottom','30vh');
+            }else
+            {
+                $($('body')[0]).css('padding-bottom','1rem');
+            }
+        }
+    	
     })
 });
 
