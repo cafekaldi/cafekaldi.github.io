@@ -77,7 +77,6 @@ function openGaleryDayOfWeek()
 		do
 		{
 			$($('.galeria').find('.carousel')[fecha.getDay() - 1]).addClass('open');
-			console.log($($('.galeria').find('.carousel')[fecha.getDay() - 1]))
 		}
 		while(  $($('.galeria').find('.carousel')).length < 7 );
 
