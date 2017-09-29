@@ -6,6 +6,7 @@ $( document ).ready(function() {
     })
 
     setTimeout(function(){
+	var ventana_ancho = $(window).width();
     	if ($('#btn_play').hasClass('bb-paused')) {
     		$('#btn_play').click();
     		$("#player").addClass('open');
